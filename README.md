@@ -1,5 +1,4 @@
-A template Typescript React App using Tailwind.
-
+A React App to format PGNs and tournament data into tagged PGN format for Lichess studies.
 
 To run locally:
 
