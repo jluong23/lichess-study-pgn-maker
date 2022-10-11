@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+h1{
+    @apply text-2xl 
+}    
+h2{
+    @apply text-xl
+}
+
+body{
+    @apply bg-background
+}
+
+.pill-button {
+    @apply font-bold py-2 px-4 rounded-full cursor-pointer
+  }
