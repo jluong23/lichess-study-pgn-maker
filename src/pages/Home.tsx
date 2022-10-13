@@ -1,17 +1,11 @@
 import { useState } from "react";
-import TournamentForm from "../components/TournamentForm";
+import TournamentForm, { TournamentDetails } from "../components/TournamentForm";
 import useModalContext from "../hooks/useModalContext";
 
 function Home() {
 
   const modalContext = useModalContext();
-  const [tournamentDetails, setTournamentDetails] = useState(
-    {
-      player: "",
-      tournament: "",
-      elo: 1500
-    }
-  );
+  const [tournamentDetails, setTournamentDetails] = useState({} as TournamentDetails);
   return (
     <div>
         <h1>Home</h1>
