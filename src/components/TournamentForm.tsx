@@ -75,14 +75,11 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
       const newRound = {
         num: rounds ? rounds.length + 1 : 1,
         // First round is white. Next rounds will alternate from previous round
-        side: rounds ? 
+        side: rounds && rounds.length > 0 ? 
           rounds[rounds.length-1].side == 'Black' ? 'White' : 'Black' 
           : 'White'
       } as ChessRound
       const newRounds = rounds ? rounds.concat(newRound) : [newRound]  
-      console.log(newRounds);
-      
-
       setRounds(newRounds);
     }
 
