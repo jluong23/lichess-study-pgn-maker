@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { IconContext } from "react-icons/lib";
 import useModalContext from "../hooks/useModalContext";
-import {FaChessKing} from "react-icons/fa";
+import { RoundForm } from "./RoundForm";
+import {MdModeEdit, MdOutlineDone} from"react-icons/md"
 
 export type ChessColor = 'White' | 'Black';
-export type Result = 'Win' | 'Loss' | 'Draw';
+export type Result = ChessColor | 'Draw';
 
 export interface ChessPlayer {
   name: string, 
@@ -29,39 +29,12 @@ interface TournamentFormProps{
   setTournamentDetails: (input: TournamentDetails) => void
 }
 
-const RoundForm = ({rounds, round}:{rounds:ChessRound[], round:ChessRound}) => {  
-  
-  const [kingColor, setKingColor] = useState<string>(round.side == 'Black' ? 'Black' : 'Gray');  
-  const kingClicked = () => {
-    setKingColor((color) => {
-      if(color == 'Gray') return 'Black';
-      return 'Gray'
-    })
-  }
-
-  return (
-    <div className="flex items-center h-10 space-x-1 space-y-0 [&>input]:border-2 [&>select]:border-2">
-      <h2>{round.num})</h2>
-      <IconContext.Provider value ={{color:kingColor}}>
-        <FaChessKing className="cursor-pointer" onClick={kingClicked} />
-      </IconContext.Provider>
-      <p>vs</p>
-      <input className="w-10" placeholder="Title"/>
-      <input placeholder="Name"/>
-      <input className="w-14" type={"number"} placeholder="ELO"/>
-      <select>
-        <option>1-0</option>
-        <option>0-1</option>
-        <option>&frac12;-&frac12;</option>
-      </select>
-    </div>
-  )
-}
 
 function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentFormProps) {
     const [player, setPlayer] = useState<ChessPlayer>(tournamentDetails.player);
     const [tournament, setTournament] = useState<string>(tournamentDetails.tournament);
     const [rounds, setRounds] = useState<ChessRound[]>(tournamentDetails.rounds)
+    const roundFormComponents:any = [];
     const modalContext = useModalContext();
 
     const formSubmit = (e: React.FormEvent) => {
@@ -77,7 +50,11 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
         // First round is white. Next rounds will alternate from previous round
         side: rounds && rounds.length > 0 ? 
           rounds[rounds.length-1].side == 'Black' ? 'White' : 'Black' 
-          : 'White'
+          : 'White',
+        opponent: {
+          
+        },
+        result: 'White'
       } as ChessRound
       const newRounds = rounds ? rounds.concat(newRound) : [newRound]  
       setRounds(newRounds);
@@ -103,6 +80,7 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
           onChange={(e) => {setPlayer(
           (old) => {return {...old, name:e.target.value}}
         )}}
+          required
         />
 
         <label>FIDE ELO: </label>
@@ -112,22 +90,28 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
           onChange={(e) => {setPlayer(
             (old) => {return {...old, elo:parseInt(e.target.value)}}
           )}}
+          
         />
+        <span className="flex space-x-1">
+          <h2>Rounds</h2>
+        </span>
 
-        <h2>Rounds</h2>
         <div>
           {rounds && rounds.map((round, i) => {
-            return <RoundForm rounds={rounds} round={round} key={round.num}/>
+            const component = <RoundForm player={player} round={round} setRounds={setRounds} key={round.num}/>
+            roundFormComponents.push(component);
+            return component
           })}
 
         </div>
-        <span className="space-x-1">
-          <input type="button" className="pill-button bg-blue-400" value={"+"} onClick={addRound}/>
-          {/* conditonally render the delete round button */}
-          {rounds && rounds.length >= 1 && 
-            <input type="button" className="pill-button bg-red-400" value={"-"} onClick={popRound}/>
-          }
-        </span>
+          <span className="space-x-1">
+            <input type="button" className="pill-button bg-blue-400" value={"+"} onClick={addRound}/>
+            {/* conditonally render the delete round button */}
+            {rounds && rounds.length >= 1 && 
+              <input type="button" className="pill-button bg-red-400" value={"-"} onClick={popRound}/>
+            }
+          </span>
+        
         <hr className="h-1 w-full"/>
         
         <span className="space-x-1">
