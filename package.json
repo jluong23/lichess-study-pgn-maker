@@ -1,6 +1,6 @@
 {
   "name": "lichess-studypgn",
-  "homepage": 'https://jluong23.github.io/pgn-maker',
+  "homepage": "http://jluong23.github.io/lichess-study-pgn-maker",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +11,7 @@
     "@types/node": "^16.11.64",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
