@@ -17,3 +17,7 @@ body{
 .pill-button {
     @apply font-bold py-1 px-2 rounded-full cursor-pointer border-solid
   }
+
+input{
+    @apply border-2
+}

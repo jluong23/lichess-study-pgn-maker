@@ -2,17 +2,16 @@ import { useEffect, useState } from "react";
 import { IconContext } from "react-icons/lib";
 import useModalContext from "../hooks/useModalContext";
 import {FaChessKing} from "react-icons/fa";
-import { ChessPlayer, ChessRound, Result } from "./TournamentForm";
+import { ChessColor, ChessPlayer, ChessRound, getOppositeColor, Result } from "./TournamentForm";
 
 interface RoundFormProps{
     player: ChessPlayer // the player details, used for formatting in view mode
     round: ChessRound //the round to render the form for
     setRounds: any //setter for parent state (TournamentForm)
     editMode: boolean
-    setEditMode: (input: boolean) => void
   }
   
-export const RoundForm = ({editMode, setEditMode, player, round, setRounds}:RoundFormProps) => {  
+export const RoundForm = ({editMode, player, round, setRounds}:RoundFormProps) => {  
     const [side, setSide] = useState(round.side);
     const [opponent, setOpponent] = useState(round.opponent);
     const [result, setResult] = useState(round.result);
@@ -20,7 +19,7 @@ export const RoundForm = ({editMode, setEditMode, player, round, setRounds}:Roun
     
     const toggleSide = () => {
       // swap color of 'side' state
-      const newColor = side == 'White' ? 'Black' : 'White'; 
+      const newColor = getOppositeColor(side); 
       const iconColor = newColor == 'White' ? 'Gray' : 'Black';
       setSide(newColor);
       setIconColor(iconColor)    
@@ -68,9 +67,9 @@ export const RoundForm = ({editMode, setEditMode, player, round, setRounds}:Roun
           onChange={(e) => {setResult(e.target.value as Result);}}
           defaultValue={result}
         >
-          <option value={'White'}>1-0</option>
-          <option value={'Black'}>0-1</option>
-          <option value={'Draw'}>&frac12;-&frac12;</option>
+          <option value={'1-0'}>1-0</option>
+          <option value={'0-1'}>0-1</option>
+          <option value={'1/2-1/2'}>&frac12;-&frac12;</option>
         </select>
 
         
@@ -78,18 +77,18 @@ export const RoundForm = ({editMode, setEditMode, player, round, setRounds}:Roun
     )
   
     const viewModeOutput = () => {
-      if(!opponent.name || !player.name){
-        return <div><h3>{round.num})</h3></div>
-      }
-      const formatPlayer = (player:ChessPlayer) => {
+      // if(!opponent.name || !player.name){
+      //   return <div><h3>{round.num})</h3></div>
+      // }
+      const formatPlayer = (player:ChessPlayer, side:ChessColor) => {
         // player formatted in JSX
         let eloOutput = player.elo ? `(${player.elo})` : ""
         let titleOutput = <span className="text-[rgb(156,107,30)]">{`${player.title || ''}`}</span>
-        let nameOutput = player.name;
+        let nameOutput = player.name ? player.name : side;
         return <span>{titleOutput} {nameOutput} {eloOutput}</span>
       }
-      const opponentName = formatPlayer(opponent)
-      const playerName = formatPlayer(player)
+      const opponentName = formatPlayer(opponent, getOppositeColor(round.side))
+      const playerName = formatPlayer(player, round.side)
       
       const pairing = side == 'White' ? 
       <span>
@@ -100,21 +99,9 @@ export const RoundForm = ({editMode, setEditMode, player, round, setRounds}:Roun
        {opponentName} vs {playerName} 
         </span>
 
-      let pairingResult;
-      switch(result) {
-          case 'White':
-              pairingResult = <span>(1-0)</span>
-              break;
-          case 'Black':
-              pairingResult = <span>(0-1)</span>
-              break
-          case 'Draw':
-              pairingResult = <span>(&frac12;-&frac12;)</span>;
-              break;
-      }
       return (
           <div>
-              <h3>{round.num}) {pairing} {pairingResult}</h3>
+              <h3>{round.num}) {pairing} [{round.result}]</h3>
           </div>
       )
     }

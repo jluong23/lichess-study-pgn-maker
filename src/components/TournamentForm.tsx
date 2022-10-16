@@ -5,7 +5,7 @@ import {MdModeEdit, MdOutlineDone} from"react-icons/md"
 import {IoMdEye} from "react-icons/io"
 
 export type ChessColor = 'White' | 'Black';
-export type Result = ChessColor | 'Draw';
+export type Result = '1-0' | '0-1' | '1/2-1/2'
 
 export interface ChessPlayer {
   name: string, 
@@ -23,6 +23,8 @@ export interface TournamentDetails {
   player: ChessPlayer,
   tournament: string,
   rounds: ChessRound[]
+  date: string,
+  timeControl: string
 }
 
 interface TournamentFormProps{
@@ -30,20 +32,32 @@ interface TournamentFormProps{
   setTournamentDetails: (input: TournamentDetails) => void
 }
 
+export const getOppositeColor = (side:ChessColor) => {
+  // mapping from white to black and vice versa
+  switch (side) {
+    case 'White': return 'Black';
+    case 'Black': return 'White';
+  }
+}
 
 function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentFormProps) {
     const [player, setPlayer] = useState<ChessPlayer>(tournamentDetails.player);
     const [tournament, setTournament] = useState<string>(tournamentDetails.tournament);
     const [rounds, setRounds] = useState<ChessRound[]>(tournamentDetails.rounds)
+    const [date, setDate] = useState<string>(tournamentDetails.date);
+    const [timeControl, setTimeControl] = useState<string>(tournamentDetails.timeControl);
+    
     const [editMode, setEditMode] = useState(false);
     const roundFormComponents:any = [];
     const modalContext = useModalContext();
 
     const formSubmit = (e: React.FormEvent) => {
       e.preventDefault();
-      const newDetails:TournamentDetails = {player, tournament, rounds}
+      const newDetails:TournamentDetails = {player, tournament, rounds, date, timeControl}
       setTournamentDetails(newDetails);
       modalContext.closeModal();       
+      console.log(newDetails);
+      
     }
 
     const addRound = () => {
@@ -51,12 +65,12 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
         num: rounds ? rounds.length + 1 : 1,
         // First round is white. Next rounds will alternate from previous round
         side: rounds && rounds.length > 0 ? 
-          rounds[rounds.length-1].side == 'Black' ? 'White' : 'Black' 
+          getOppositeColor(rounds[rounds.length-1].side) 
           : 'White',
         opponent: {
           
         },
-        result: 'White'
+        result: '1-0'
       } as ChessRound
       const newRounds = rounds ? rounds.concat(newRound) : [newRound]  
       setRounds(newRounds);
@@ -69,31 +83,46 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
     }    
 
     return (
-      <form className="flex flex-col items-start justify-center space-y-1 [&>input]:border-2" onSubmit={formSubmit}>
+      <form className="flex flex-col items-start justify-center space-y-1" onSubmit={formSubmit}>
         <h2>Tournament Details</h2>
-        <hr className="h-1 w-full"/>
 
-        <label>Tournament Name: </label>
-        <input defaultValue={tournament} onChange={(e) => {setTournament(e.target.value)}}/>
+        <span className="flex flex-col">
+          <label>Tournament Name: </label>
+          <input defaultValue={tournament} onChange={(e) => {setTournament(e.target.value)}}/>
+        </span>
 
-        <label>Player: </label>
-        <input 
-          defaultValue={player ? player.name : ""} 
-          onChange={(e) => {setPlayer(
-          (old) => {return {...old, name:e.target.value}}
-        )}}
-          required
-        />
+        <span className="flex flex-col">
+          <label>Date: </label>
+          <input type={'date'} defaultValue={date} onChange={(e) => {setDate(e.target.value)}}/>
+        </span>
 
-        <label>FIDE ELO: </label>
-        <input 
-          type={"number"} 
-          defaultValue={player ? player.elo : ""} 
-          onChange={(e) => {setPlayer(
-            (old) => {return {...old, elo:parseInt(e.target.value)}}
+        <span className="flex flex-col">
+          <label>Time control: </label>
+          <input className="w-12" defaultValue={timeControl} onChange={(e) => {setTimeControl(e.target.value)}}/>
+        </span>
+
+        <span className="flex flex-col">
+          <label>Player: </label>
+          <input 
+            defaultValue={player ? player.name : ""} 
+            onChange={(e) => {setPlayer(
+            (old) => {return {...old, name:e.target.value}}
           )}}
-          
+            required
         />
+
+        </span>
+        <span className="flex flex-col">
+          <label>ELO: </label>
+          <input 
+            type={"number"} 
+            defaultValue={player ? player.elo : ""} 
+            onChange={(e) => {setPlayer(
+              (old) => {return {...old, elo:parseInt(e.target.value)}}
+            )}}
+          />
+        </span>
+
         <span className="flex space-x-1">
           <h2>Rounds</h2>
           {rounds && rounds.length > 0 && editMode && 
@@ -110,7 +139,7 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
 
         <div>
           {rounds && rounds.map((round, i) => {
-            return <RoundForm editMode={editMode} setEditMode={setEditMode} player={player} round={round} setRounds={setRounds} key={round.num}/>
+            return <RoundForm editMode={editMode} player={player} round={round} setRounds={setRounds} key={round.num}/>
           })}
 
         </div>
@@ -122,11 +151,10 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
             }
           </span>
         
-        <hr className="h-1 w-full"/>
         
         <span className="space-x-1">
           <input className="pill-button bg-green-400" type="submit" value={"Save"}/>
-          <input className="pill-button bg-gray-400" type={"button"} value={"Generate PGN"}/>
+          <input className="pill-button bg-gray-400" type={"button"} value={"Copy Study PGN"}/>
         </span>
 
       </form>
