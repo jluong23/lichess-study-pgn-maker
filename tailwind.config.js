@@ -10,6 +10,9 @@ module.exports = {
       colors: {
         primary: colors.blue[400],
         background: colors.neutral[300]
+      },
+      transitionProperty: {
+        'width' : 'width'
       }
     },
   },

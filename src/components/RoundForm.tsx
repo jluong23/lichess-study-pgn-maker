@@ -15,12 +15,12 @@ export const RoundForm = ({editMode, player, round, setRounds}:RoundFormProps) =
     const [side, setSide] = useState(round.side);
     const [opponent, setOpponent] = useState(round.opponent);
     const [result, setResult] = useState(round.result);
-    const [iconColor, setIconColor] = useState(side == 'White' ? 'Gray' : 'Black');
+    const [iconColor, setIconColor] = useState(side === 'White' ? 'Gray' : 'Black');
     
     const toggleSide = () => {
       // swap color of 'side' state
       const newColor = getOppositeColor(side); 
-      const iconColor = newColor == 'White' ? 'Gray' : 'Black';
+      const iconColor = newColor === 'White' ? 'Gray' : 'Black';
       setSide(newColor);
       setIconColor(iconColor)    
     }
@@ -28,7 +28,7 @@ export const RoundForm = ({editMode, player, round, setRounds}:RoundFormProps) =
     // update rounds in parent component if input states change
     useEffect(() => {setRounds((oldRounds:ChessRound[]) => {
       return oldRounds.map((r) => {
-        if(r.num == round.num){
+        if(r.num === round.num){
           return {side, opponent, result, num:round.num} as ChessRound 
         }else{
           return r;
@@ -77,9 +77,6 @@ export const RoundForm = ({editMode, player, round, setRounds}:RoundFormProps) =
     )
   
     const viewModeOutput = () => {
-      // if(!opponent.name || !player.name){
-      //   return <div><h3>{round.num})</h3></div>
-      // }
       const formatPlayer = (player:ChessPlayer, side:ChessColor) => {
         // player formatted in JSX
         let eloOutput = player.elo ? `(${player.elo})` : ""
@@ -90,7 +87,7 @@ export const RoundForm = ({editMode, player, round, setRounds}:RoundFormProps) =
       const opponentName = formatPlayer(opponent, getOppositeColor(round.side))
       const playerName = formatPlayer(player, round.side)
       
-      const pairing = side == 'White' ? 
+      const pairing = side === 'White' ? 
       <span>
         {playerName} vs {opponentName}
       </span>

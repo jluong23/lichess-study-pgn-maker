@@ -3,6 +3,7 @@ import useModalContext from "../hooks/useModalContext";
 import { RoundForm } from "./RoundForm";
 import {MdModeEdit, MdOutlineDone} from"react-icons/md"
 import {IoMdEye} from "react-icons/io"
+import CopyButton from "./CopyButton";
 
 export type ChessColor = 'White' | 'Black';
 export type Result = '1-0' | '0-1' | '1/2-1/2'
@@ -48,16 +49,13 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
     const [timeControl, setTimeControl] = useState<string>(tournamentDetails.timeControl);
     
     const [editMode, setEditMode] = useState(false);
-    const roundFormComponents:any = [];
     const modalContext = useModalContext();
 
     const formSubmit = (e: React.FormEvent) => {
       e.preventDefault();
       const newDetails:TournamentDetails = {player, tournament, rounds, date, timeControl}
       setTournamentDetails(newDetails);
-      modalContext.closeModal();       
-      console.log(newDetails);
-      
+      modalContext.closeModal();             
     }
 
     const addRound = () => {
@@ -81,6 +79,41 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
         setRounds(rounds.slice(0,rounds.length-1));
       }
     }    
+
+    const createRoundPGN = (round:ChessRound) => {
+      if(!round){
+        return ''
+      }
+      const newDetails:TournamentDetails = {player, tournament, rounds, date, timeControl}
+      const white = round.side == 'White' ? player : round.opponent;
+      const black = round.side == 'Black' ? player : round.opponent;
+      const moves = "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bxb4 5. c3 Ba5 6. d4 exd4 7. O-O" //TODO: Plays the evans gambit
+      const pgn = 
+`
+[Date "${date || ''}"]
+[White "${white.name || ''}"]
+[Black "${black.name || ''}"]
+[Result "${round.result}"]
+[WhiteElo "${white.elo || ''}"]
+[WhiteTitle "${white.title || ''}"]
+[BlackTitle "${black.title || ''}"]
+[WhiteElo "${white.elo || ''}"]
+[BlackElo "${black.elo || ''}"]
+[TimeControl "${timeControl || ''}"]
+[Round "${round.num}"]
+[Variant "Standard"]
+${moves}
+`
+      return pgn
+    }
+
+    const createStudyPGN = () => {
+      if(!rounds){
+        return ''
+      }
+      const studyPgn = rounds.map((r) => {return createRoundPGN(r)})
+      return studyPgn.join('\n');
+    }
 
     return (
       <form className="flex flex-col items-start justify-center space-y-1" onSubmit={formSubmit}>
@@ -152,9 +185,12 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
           </span>
         
         
-        <span className="space-x-1">
+        <span className="space-x-1 w-full flex">
           <input className="pill-button bg-green-400" type="submit" value={"Save"}/>
-          <input className="pill-button bg-gray-400" type={"button"} value={"Copy Study PGN"}/>
+          <span className="w-full flex justify-center">
+            <CopyButton text="Copy Study PGN" clickedText="Copied" copyText={createStudyPGN()}/>
+
+          </span>
         </span>
 
       </form>
