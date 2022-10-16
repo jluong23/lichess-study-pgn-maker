@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/pgn-maker/static/css/main.1716bb49.css",
+    "main.js": "/pgn-maker/static/js/main.3a256196.js",
+    "index.html": "/pgn-maker/index.html",
+    "main.1716bb49.css.map": "/pgn-maker/static/css/main.1716bb49.css.map",
+    "main.3a256196.js.map": "/pgn-maker/static/js/main.3a256196.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1716bb49.css",
+    "static/js/main.3a256196.js"
+  ]
+}
