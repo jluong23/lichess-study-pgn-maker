@@ -2,6 +2,7 @@ import { useState } from "react";
 import useModalContext from "../hooks/useModalContext";
 import { RoundForm } from "./RoundForm";
 import {MdModeEdit, MdOutlineDone} from"react-icons/md"
+import {IoMdEye} from "react-icons/io"
 
 export type ChessColor = 'White' | 'Black';
 export type Result = ChessColor | 'Draw';
@@ -34,6 +35,7 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
     const [player, setPlayer] = useState<ChessPlayer>(tournamentDetails.player);
     const [tournament, setTournament] = useState<string>(tournamentDetails.tournament);
     const [rounds, setRounds] = useState<ChessRound[]>(tournamentDetails.rounds)
+    const [editMode, setEditMode] = useState(false);
     const roundFormComponents:any = [];
     const modalContext = useModalContext();
 
@@ -94,13 +96,21 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
         />
         <span className="flex space-x-1">
           <h2>Rounds</h2>
+          {rounds && rounds.length > 0 && editMode && 
+              <button type='button' className="pill-button bg-gray-400" onClick={() => {setEditMode(false)}}>
+                <IoMdEye/>
+              </button>
+          }
+          {rounds && rounds.length > 0 && !editMode && 
+            <button type='button' className="pill-button bg-red-400" onClick={() => {setEditMode(true)}}>
+              <MdModeEdit/>
+            </button>
+          }
         </span>
 
         <div>
           {rounds && rounds.map((round, i) => {
-            const component = <RoundForm player={player} round={round} setRounds={setRounds} key={round.num}/>
-            roundFormComponents.push(component);
-            return component
+            return <RoundForm editMode={editMode} setEditMode={setEditMode} player={player} round={round} setRounds={setRounds} key={round.num}/>
           })}
 
         </div>

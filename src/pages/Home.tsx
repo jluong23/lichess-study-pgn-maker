@@ -5,7 +5,7 @@ import useModalContext from "../hooks/useModalContext";
 function Home() {
 
   const modalContext = useModalContext();
-  const [tournamentDetails, setTournamentDetails] = useState({} as TournamentDetails);
+  const [tournamentDetails, setTournamentDetails] = useState({player: {}} as TournamentDetails);
   return (
     <div>
         <h1>Home</h1>
