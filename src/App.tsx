@@ -9,7 +9,7 @@ import About from "./pages/About";
 function App() {
   const [sideBarVisible, setSideBarVisible] = useState(false);
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/lichess-study-pgn-maker">
       <Sidebar sideBarVisible={sideBarVisible} setSideBarVisible={setSideBarVisible}/>
       <Navbar sideBarVisible={sideBarVisible} setSideBarVisible={setSideBarVisible}/>
       <div className="p-1">
