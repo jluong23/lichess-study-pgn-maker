@@ -37,42 +37,45 @@ export const RoundForm = ({editMode, player, round, setRounds}:RoundFormProps) =
     })}, [side, opponent, result])
   
     const editModeOutput = () => (
-      <div className="flex items-center h-10 space-x-1 space-y-0 [&>input]:border-2 [&>select]:border-2">
-        <h2>{round.num})</h2>
-        <IconContext.Provider value ={{color: iconColor}}>
-          <FaChessKing className="cursor-pointer" onClick={toggleSide} />
-        </IconContext.Provider>
-        <p>vs</p>
-        <input 
-          className="w-10" 
-          placeholder="Title"
-          defaultValue={opponent.title}
-          onChange={(e) => {setOpponent(
-            (old) => {return {...old, title: e.target.value}})}}
-          />
-        <input 
-          placeholder="Name" 
-          defaultValue={opponent.name}
-          onChange={(e) => {setOpponent((old) => {return {...old, name: e.target.value}})}}
-        />
-        <input 
-          className="w-14" 
-          type={"number"} 
-          placeholder="ELO"
-          defaultValue={opponent.elo}
-          onChange={(e) => {setOpponent(
-            (old) => {return {...old, elo: parseInt(e.target.value)}})}}
-        />
-        <select 
-          onChange={(e) => {setResult(e.target.value as Result);}}
-          defaultValue={result}
-        >
-          <option value={'1-0'}>1-0</option>
-          <option value={'0-1'}>0-1</option>
-          <option value={'1/2-1/2'}>&frac12;-&frac12;</option>
-        </select>
+      <div className="[&>div>input]:border-2 [&>div>select]:border-2">
+        <div id='player-color' className="flex flex-row items-center space-x-1">
+          <h2>{round.num})</h2>
+          <IconContext.Provider value ={{color: iconColor}}>
+            <FaChessKing className="cursor-pointer" onClick={toggleSide} />
+          </IconContext.Provider>
+          <p>vs</p>
+        </div>
 
-        
+        <div id="opponent-details">
+          <input 
+            className="w-10" 
+            placeholder="Title"
+            defaultValue={opponent.title}
+            onChange={(e) => {setOpponent(
+              (old) => {return {...old, title: e.target.value}})}}
+            />
+          <input 
+            placeholder="Name" 
+            defaultValue={opponent.name}
+            onChange={(e) => {setOpponent((old) => {return {...old, name: e.target.value}})}}
+          />
+          <input 
+            className="w-14" 
+            type={"number"} 
+            placeholder="ELO"
+            defaultValue={opponent.elo}
+            onChange={(e) => {setOpponent(
+              (old) => {return {...old, elo: parseInt(e.target.value)}})}}
+          />
+          <select 
+            onChange={(e) => {setResult(e.target.value as Result);}}
+            defaultValue={result}
+          >
+            <option value={'1-0'}>1-0</option>
+            <option value={'0-1'}>0-1</option>
+            <option value={'1/2-1/2'}>&frac12;-&frac12;</option>
+          </select>
+        </div>
       </div>
     )
   

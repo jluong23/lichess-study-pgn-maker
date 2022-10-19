@@ -84,7 +84,6 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
       if(!round){
         return ''
       }
-      const newDetails:TournamentDetails = {player, tournament, rounds, date, timeControl}
       const white = round.side == 'White' ? player : round.opponent;
       const black = round.side == 'Black' ? player : round.opponent;
       const moves = "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bxb4 5. c3 Ba5 6. d4 exd4 7. O-O" //TODO: Plays the evans gambit
@@ -115,67 +114,66 @@ ${moves}
       return studyPgn.join('\n');
     }
 
-    return (
-      <form className="flex flex-col items-start justify-center space-y-1" onSubmit={formSubmit}>
-        <h2>Tournament Details</h2>
+    const detailsForm = (
+      <div className="[&>span]:flex [&>span]:flex-col [&>span]:items-start">
+          <h2>Tournament Details</h2>
+          <span>
+            <label>Tournament Name: </label>
+            <input defaultValue={tournament} onChange={(e) => {setTournament(e.target.value)}}/>
+          </span>
 
-        <span className="flex flex-col">
-          <label>Tournament Name: </label>
-          <input defaultValue={tournament} onChange={(e) => {setTournament(e.target.value)}}/>
-        </span>
+          <span>
+            <label>Date: </label>
+            <input type={'date'} defaultValue={date} onChange={(e) => {setDate(e.target.value)}}/>
+          </span>
 
-        <span className="flex flex-col">
-          <label>Date: </label>
-          <input type={'date'} defaultValue={date} onChange={(e) => {setDate(e.target.value)}}/>
-        </span>
+          <span>
+            <label>Time control: </label>
+            <input defaultValue={timeControl} onChange={(e) => {setTimeControl(e.target.value)}}/>
+          </span>
 
-        <span className="flex flex-col">
-          <label>Time control: </label>
-          <input className="w-12" defaultValue={timeControl} onChange={(e) => {setTimeControl(e.target.value)}}/>
-        </span>
-
-        <span className="flex flex-col">
-          <label>Player: </label>
-          <input 
-            defaultValue={player ? player.name : ""} 
-            onChange={(e) => {setPlayer(
-            (old) => {return {...old, name:e.target.value}}
-          )}}
-            required
-        />
-
-        </span>
-        <span className="flex flex-col">
-          <label>ELO: </label>
-          <input 
-            type={"number"} 
-            defaultValue={player ? player.elo : ""} 
-            onChange={(e) => {setPlayer(
-              (old) => {return {...old, elo:parseInt(e.target.value)}}
+          <span>
+            <label>Player: </label>
+            <input 
+              defaultValue={player ? player.name : ""} 
+              onChange={(e) => {setPlayer(
+              (old) => {return {...old, name:e.target.value}}
             )}}
+              required
           />
-        </span>
+          </span>
+          <span>
+            <label>ELO: </label>
+            <input 
+              type={"number"} 
+              defaultValue={player ? player.elo : ""} 
+              onChange={(e) => {setPlayer(
+                (old) => {return {...old, elo:parseInt(e.target.value)}}
+              )}}
+            />
+          </span>
+        </div>
+    )
 
-        <span className="flex space-x-1">
-          <h2>Rounds</h2>
-          {rounds && rounds.length > 0 && editMode && 
-              <button type='button' className="pill-button bg-gray-400" onClick={() => {setEditMode(false)}}>
-                <IoMdEye/>
+    const roundsForm = (
+      <div id ='rounds'>
+          <span className="flex space-x-1">
+            <h2>Rounds</h2>
+            {rounds && rounds.length > 0 && editMode && 
+                <button type='button' className="pill-button bg-gray-400" onClick={() => {setEditMode(false)}}>
+                  <IoMdEye/>
+                </button>
+            }
+            {rounds && rounds.length > 0 && !editMode && 
+              <button type='button' className="pill-button bg-red-400" onClick={() => {setEditMode(true)}}>
+                <MdModeEdit/>
               </button>
-          }
-          {rounds && rounds.length > 0 && !editMode && 
-            <button type='button' className="pill-button bg-red-400" onClick={() => {setEditMode(true)}}>
-              <MdModeEdit/>
-            </button>
-          }
-        </span>
-
-        <div>
+            }
+          </span>
           {rounds && rounds.map((round, i) => {
             return <RoundForm editMode={editMode} player={player} round={round} setRounds={setRounds} key={round.num}/>
           })}
 
-        </div>
           <span className="space-x-1">
             <input type="button" className="pill-button bg-blue-400" value={"+"} onClick={addRound}/>
             {/* conditonally render the delete round button */}
@@ -183,11 +181,18 @@ ${moves}
               <input type="button" className="pill-button bg-red-400" value={"-"} onClick={popRound}/>
             }
           </span>
-        
-        
-        <span className="space-x-1 w-full flex">
+        </div>
+    )
+    return (
+      <form onSubmit={formSubmit}>
+        <div className="sm:flex sm:space-x-4">
+          {detailsForm}    
+          {roundsForm}
+
+        </div>
+        <span className="space-x-1 flex sm:mt-4">
           <input className="pill-button bg-green-400" type="submit" value={"Save"}/>
-          <span className="w-full flex justify-center">
+          <span className="">
             <CopyButton text="Copy Study PGN" clickedText="Copied" copyText={createStudyPGN()}/>
 
           </span>

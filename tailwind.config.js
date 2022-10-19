@@ -11,6 +11,9 @@ module.exports = {
         primary: colors.blue[400],
         background: colors.neutral[300]
       },
+      screens: {
+        'xs': '460px'
+      },
       transitionProperty: {
         'width' : 'width'
       }
