@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ChessBoard from "../components/Game/ChessBoard";
 import TournamentForm, { TournamentDetails } from "../components/TournamentForm";
 import useModalContext from "../hooks/useModalContext";
 
@@ -16,6 +17,7 @@ function Home() {
               Edit Tournament Details 
           </button>
         </div>
+        <ChessBoard/>
     </div>
   );
 }
