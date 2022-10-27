@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import useModalContext from "../../hooks/useModalContext";
 import Tile from "./Tile";
 
 export interface Piece {
@@ -10,6 +11,13 @@ export interface Piece {
 
 
 function ChessBoard() {
+    const modalContext = useModalContext();
+    const onBoardClick = () => {
+      // TODO: 
+      modalContext.openModal(<div>Board editor under construction, please check again soon!</div>)
+
+    }
+
     const getPieceName = (x:number) => {
       // get piece name from indexes of x of the board
         switch (x) {
@@ -60,7 +68,7 @@ function ChessBoard() {
         }
       }    
     return (
-      <div className="grid w-[800px] h-[800px] grid-cols-8">
+      <div className="grid w-[20em] h-[20em] grid-cols-8" onClick={onBoardClick}>
         {board}
       </div>
     );

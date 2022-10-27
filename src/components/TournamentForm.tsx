@@ -185,7 +185,7 @@ ${moves}
     )
     return (
       <form onSubmit={formSubmit}>
-        <div className="sm:flex sm:space-x-4">
+        <div className="sm:flex sm:space-x-4 [&>*]:py-1">
           {detailsForm}    
           {roundsForm}
 
