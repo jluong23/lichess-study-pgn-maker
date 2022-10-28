@@ -21,3 +21,15 @@ body{
 input{
     @apply border-2
 }
+
+ol {
+    @apply list-inside list-decimal
+}
+
+ul {
+    @apply list-inside list-disc
+}
+
+.hyperlink {
+    @apply text-blue-500    
+}

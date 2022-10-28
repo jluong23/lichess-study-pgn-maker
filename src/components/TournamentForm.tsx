@@ -1,5 +1,4 @@
 import { useState } from "react";
-import useModalContext from "../hooks/useModalContext";
 import { RoundForm } from "./RoundForm";
 import {MdModeEdit, MdOutlineDone} from"react-icons/md"
 import {IoMdEye} from "react-icons/io"
@@ -49,13 +48,13 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
     const [timeControl, setTimeControl] = useState<string>(tournamentDetails.timeControl);
     
     const [editMode, setEditMode] = useState(false);
-    const modalContext = useModalContext();
 
     const formSubmit = (e: React.FormEvent) => {
+      // TODO: Sets tournament details for the parent 'Study' component.
+      // could be used to save details in local storage..
       e.preventDefault();
       const newDetails:TournamentDetails = {player, tournament, rounds, date, timeControl}
       setTournamentDetails(newDetails);
-      modalContext.closeModal();             
     }
 
     const addRound = () => {
@@ -160,14 +159,16 @@ ${moves}
           <span className="flex space-x-1">
             <h2>Rounds</h2>
             {rounds && rounds.length > 0 && editMode && 
-                <button type='button' className="pill-button bg-gray-400" onClick={() => {setEditMode(false)}}>
-                  <IoMdEye/>
-                </button>
+              // rounds exist, provide option to disable edit mode
+              <button type='button' className="pill-button bg-gray-400" onClick={() => {setEditMode(false)}}>
+                <IoMdEye/>
+              </button>
             }
             {rounds && rounds.length > 0 && !editMode && 
+              // rounds exist, provide option to enable edit mode
               <button type='button' className="pill-button bg-red-400" onClick={() => {setEditMode(true)}}>
                 <MdModeEdit/>
-              </button>
+              </button>   
             }
           </span>
           {rounds && rounds.map((round, i) => {
@@ -191,7 +192,7 @@ ${moves}
 
         </div>
         <span className="space-x-1 flex sm:mt-4">
-          <input className="pill-button bg-green-400" type="submit" value={"Save"}/>
+          {/* <input className="pill-button bg-green-400" type="submit" value={"Save"}/> */}
           <span className="">
             <CopyButton text="Copy Study PGN" clickedText="Copied" copyText={createStudyPGN()}/>
 

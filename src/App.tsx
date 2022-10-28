@@ -15,7 +15,7 @@ function App() {
       <Sidebar sideBarVisible={sideBarVisible} setSideBarVisible={setSideBarVisible}/>
       <div className="flex flex-col h-screen">
         <Navbar sideBarVisible={sideBarVisible} setSideBarVisible={setSideBarVisible}/>
-        <div className="flex flex-1 p-1">
+        <div className="flex flex-1 p-2">
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/about" element={<About/>}/>
