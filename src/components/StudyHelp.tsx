@@ -27,8 +27,8 @@ function StudyHelp() {
                 </li>
                 <li>
                     Import your rounds via <em>'Add a new chapter' - 'PGN'</em>
-                    <div className="max-w-[500px]">
-                        <img className="opacity-75 w-full h-full object-cover" src={`${process.env.PUBLIC_URL}/assets/home/studypgn-tutorial.gif`}></img>
+                    <div className="w-[70%] h-[70%] ml-auto mr-auto">
+                        <img className="opacity-75 w-full h-full" src={`${process.env.PUBLIC_URL}/assets/home/studypgn-tutorial.gif`}></img>
                     </div>
                 </li>
             </ol>
