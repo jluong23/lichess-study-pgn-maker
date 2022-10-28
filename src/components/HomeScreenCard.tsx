@@ -10,8 +10,10 @@ interface Props {
 
 export default function HomeScreenCard({title, description, imgSrc, onClickUrl} : Props) {
     return (
-        <div className="w-3/4 h-full flex flex-col items-center justify-center place-self-center bg-pink-200 p-4">
-            <img className="opacity-75 w-6/12" src={imgSrc}></img>
+        <div className="w-3/4 h-full flex flex-col items-center justify-center place-self-center bg-neutral-400 p-4">
+            <div className="2xl:w-3/4">
+                <img className="opacity-75 w-full h-full object-fill" src={imgSrc}></img>
+            </div>
             <h2>{title}</h2>
             <p>{description}</p>
             <Link className="pill-button bg-blue-400" to={onClickUrl}>
