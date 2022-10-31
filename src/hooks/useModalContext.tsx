@@ -4,7 +4,7 @@ import { ModalContext } from "../context/ModalContext";
 export const useModalContext = () => {
     const context = useContext(ModalContext);
 
-    const openModal = (content) => {
+    const openModal = (content:any) => {
         context.dispatch({
             type: 'OPEN',
             payload: content
