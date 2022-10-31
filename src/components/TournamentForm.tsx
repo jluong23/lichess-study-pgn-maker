@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RoundForm } from "./RoundForm";
 import {MdModeEdit} from"react-icons/md"
 import {IoMdEye} from "react-icons/io"
-import CopyButton from "./CopyButton";
+import useModalContext from "../hooks/useModalContext";
+import TournamentFormModal from "./TournmanentFormModal";
 
 export type ChessColor = 'White' | 'Black';
 export type Result = '1-0' | '0-1' | '1/2-1/2'
@@ -47,9 +48,22 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
     const [rounds, setRounds] = useState<ChessRound[]>(tournamentDetails.rounds)
     const [date, setDate] = useState<string>(tournamentDetails.date);
     const [timeControl, setTimeControl] = useState<string>(tournamentDetails.timeControl);
-    
+   
     const [editMode, setEditMode] = useState(false);
 
+    // 
+    const [studyPgn, setStudyPgn] = useState<string>(''); //generated on form submit
+    const [numSubmitClicked, setNumSubmitClicked] = useState(1); //number of times submit button is clicked, useful for useEffect dependency, opening modal
+
+    const modalContext = useModalContext();
+    
+    useEffect(() => {      
+      if(rounds){
+        modalContext.openModal(<TournamentFormModal studyPgn={studyPgn}/>)
+      }
+    
+    }, [studyPgn, numSubmitClicked])
+    
     const addRound = () => {
       const newRound = {
         num: rounds ? rounds.length + 1 : 1,
@@ -72,14 +86,22 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
       }
     }    
 
-    const formSubmit = (e: React.FormEvent) => {
-      // TODO: Sets tournament details for the parent 'Study' component.
-      // could be used to save details in local storage..
-      e.preventDefault();
-      const newDetails:TournamentDetails = {player, tournament, rounds, date, timeControl}
-      setTournamentDetails(newDetails);      
-    }
 
+    const formSubmit = (e: React.FormEvent) => {      
+      e.preventDefault();
+      if(!rounds || (rounds && rounds.length == 0)){
+        modalContext.openModal(<p>Please add at least one round to proceed.</p>)
+        return;
+      }
+      // Sets tournament details for the parent 'Study' component  
+      const newDetails:TournamentDetails = {player, tournament, rounds, date, timeControl}
+      setTournamentDetails(newDetails);     
+
+      // update states for this component
+      setStudyPgn(createStudyPGN());
+      setNumSubmitClicked(numSubmitClicked+1);
+    }
+    
     const createRoundPGN = (round:ChessRound) => {
       if(!round){
         return ''
@@ -88,8 +110,7 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
       const black = round.side === 'Black' ? player : round.opponent;
       const moves = "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bxb4 5. c3 Ba5 6. d4 exd4 7. O-O" //TODO: Plays the evans gambit
       const pgn = 
-`
-[Date "${date || ''}"]
+`[Date "${date || ''}"]
 [White "${white.name || ''}"]
 [Black "${black.name || ''}"]
 [Result "${round.result}"]
@@ -138,8 +159,8 @@ ${moves}
             <input 
               defaultValue={player ? player.name : ""} 
               onChange={(e) => {setPlayer(
-              (old) => {return {...old, name:e.target.value}}
-            )}}
+                (old) => {return {...old, name:e.target.value}}
+              )}}
           />
           </span>
           <span>
@@ -192,8 +213,7 @@ ${moves}
           {roundsForm}
         </div>
         <span className="space-x-1 flex sm:mt-4">
-          {/* <input className="pill-button bg-green-400" type="submit" value={"Save"}/> */}
-          <CopyButton text="Copy Study PGN" clickedText="Copied" copyText={createStudyPGN()}/>
+          <input className="pill-button bg-blue-400" type="submit" value={"Next"}/>
         </span>
 
       </form>

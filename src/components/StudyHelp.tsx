@@ -12,7 +12,7 @@ function StudyHelp() {
         <div className="w-fit">
             <h2 className="font-bold">How to use Study PGN Maker</h2>
             <ol>
-                <li>Fill in the <em>Tournament Details</em> form, clicking <em>Copy Study PGN</em> when complete.
+                <li>Fill in the <em>Tournament Details</em> form, clicking <em>Next</em> when complete.
                     <ul>
                         <li>Click {addRoundButton} and {popRoundButton} to add and delete rounds.</li>
                         <li>You can edit opponent details for each round by clicking {editRoundsButton} </li>
@@ -30,9 +30,6 @@ function StudyHelp() {
                     <div className="w-[70%] h-[70%] ml-auto mr-auto">
                         <img alt="Chess openings quiz gif, caro kann main line" className="opacity-75 w-full h-full" src={`${process.env.PUBLIC_URL}/assets/home/studypgn-tutorial.gif`}></img>
                     </div>
-                </li>
-                <li>
-                    Until the Board Editor is made, all games will be the Evans Gambit :)
                 </li>
             </ol>
         </div>

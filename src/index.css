@@ -18,7 +18,7 @@ body{
     @apply font-bold py-1 px-2 rounded-full cursor-pointer border-solid
   }
 
-input{
+input, textarea{
     @apply border-2
 }
 
