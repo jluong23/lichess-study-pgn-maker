@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 
-export default function CopyButton({text, clickedText, copyText} : {text:string, clickedText:string, copyText:string}) {
+interface Props {
+  text:string // the initial text on the button
+  clickedText:string // the text to show on click
+  copyText:string //the text copied to clipboard
+
+}
+
+export default function CopyButton({text, clickedText, copyText} : Props) {
   const [copied, setCopied] = useState(false);
+  
+
   const copyToClipboard = () => {
     navigator.clipboard.writeText(copyText).then(
       () => {
@@ -19,7 +28,7 @@ export default function CopyButton({text, clickedText, copyText} : {text:string,
 
   return (
       <button
-        type='button'
+        type= {'button'}
         onClick={copyToClipboard}
         className={
             "pill-button bg-gray-400 text-white border-gray-500 transition-width duration-300"

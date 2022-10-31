@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { FaChessKing } from "react-icons/fa";
 import { IoMdEye } from "react-icons/io";
 import { MdModeEdit } from "react-icons/md";
@@ -19,7 +18,7 @@ function StudyHelp() {
                         <li>You can edit opponent details for each round by clicking {editRoundsButton} </li>
                         <li>View pairings by clicking {viewRoundsButton}</li>
                         <li>Change the side you played by clicking the {kingIcon} icon.</li>
-                        <li>Played online or already imported into lichess? Copy the game URl to transfer the moves over.</li>
+                        {/* <li>Played online or already imported into Lichess? Copy the game URL to transfer the moves over.</li> */}
                     </ul>
                 </li>
                 <li>
@@ -29,7 +28,7 @@ function StudyHelp() {
                 <li>
                     Import your rounds via <em>'Add a new chapter' - 'PGN'</em>
                     <div className="w-[70%] h-[70%] ml-auto mr-auto">
-                        <img className="opacity-75 w-full h-full" src={`${process.env.PUBLIC_URL}/assets/home/studypgn-tutorial.gif`}></img>
+                        <img alt="Chess openings quiz gif, caro kann main line" className="opacity-75 w-full h-full" src={`${process.env.PUBLIC_URL}/assets/home/studypgn-tutorial.gif`}></img>
                     </div>
                 </li>
                 <li>

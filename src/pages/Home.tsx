@@ -1,12 +1,7 @@
-import { useState } from "react";
-import ChessBoard from "../components/Game/ChessBoard";
 import HomeScreenCard from "../components/HomeScreenCard";
-import TournamentForm, { TournamentDetails } from "../components/TournamentForm";
-import useModalContext from "../hooks/useModalContext";
 
 function Home() {
 
-  const modalContext = useModalContext();
   return (
     <div className="w-full flex flex-col justify-center items-center space-y-2">
       <div id="title" className="space-y-1">

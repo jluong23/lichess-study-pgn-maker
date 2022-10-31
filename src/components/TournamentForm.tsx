@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { RoundForm } from "./RoundForm";
-import {MdModeEdit, MdOutlineDone} from"react-icons/md"
+import {MdModeEdit} from"react-icons/md"
 import {IoMdEye} from "react-icons/io"
 import CopyButton from "./CopyButton";
 
@@ -18,6 +18,7 @@ export interface ChessRound {
   opponent: ChessPlayer
   result: Result
   num: number
+  url: string //url of game in lichess
 }
 export interface TournamentDetails {
   player: ChessPlayer,
@@ -49,14 +50,6 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
     
     const [editMode, setEditMode] = useState(false);
 
-    const formSubmit = (e: React.FormEvent) => {
-      // TODO: Sets tournament details for the parent 'Study' component.
-      // could be used to save details in local storage..
-      e.preventDefault();
-      const newDetails:TournamentDetails = {player, tournament, rounds, date, timeControl}
-      setTournamentDetails(newDetails);
-    }
-
     const addRound = () => {
       const newRound = {
         num: rounds ? rounds.length + 1 : 1,
@@ -79,12 +72,20 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
       }
     }    
 
+    const formSubmit = (e: React.FormEvent) => {
+      // TODO: Sets tournament details for the parent 'Study' component.
+      // could be used to save details in local storage..
+      e.preventDefault();
+      const newDetails:TournamentDetails = {player, tournament, rounds, date, timeControl}
+      setTournamentDetails(newDetails);      
+    }
+
     const createRoundPGN = (round:ChessRound) => {
       if(!round){
         return ''
       }
-      const white = round.side == 'White' ? player : round.opponent;
-      const black = round.side == 'Black' ? player : round.opponent;
+      const white = round.side === 'White' ? player : round.opponent;
+      const black = round.side === 'Black' ? player : round.opponent;
       const moves = "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bxb4 5. c3 Ba5 6. d4 exd4 7. O-O" //TODO: Plays the evans gambit
       const pgn = 
 `
@@ -100,6 +101,7 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
 [TimeControl "${timeControl || ''}"]
 [Round "${round.num}"]
 [Variant "Standard"]
+
 ${moves}
 `
       return pgn
@@ -138,7 +140,6 @@ ${moves}
               onChange={(e) => {setPlayer(
               (old) => {return {...old, name:e.target.value}}
             )}}
-              required
           />
           </span>
           <span>
@@ -189,14 +190,10 @@ ${moves}
         <div className="sm:flex sm:space-x-4 [&>*]:py-1">
           {detailsForm}    
           {roundsForm}
-
         </div>
         <span className="space-x-1 flex sm:mt-4">
           {/* <input className="pill-button bg-green-400" type="submit" value={"Save"}/> */}
-          <span className="">
-            <CopyButton text="Copy Study PGN" clickedText="Copied" copyText={createStudyPGN()}/>
-
-          </span>
+          <CopyButton text="Copy Study PGN" clickedText="Copied" copyText={createStudyPGN()}/>
         </span>
 
       </form>

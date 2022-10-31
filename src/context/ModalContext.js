@@ -1,4 +1,4 @@
-import { createContext, useEffect, useReducer } from 'react'
+import { createContext, useReducer } from 'react'
 import {AiFillCloseCircle} from "react-icons/ai"
 
 export const ModalContext = createContext()

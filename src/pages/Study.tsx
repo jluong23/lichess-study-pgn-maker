@@ -1,7 +1,4 @@
 import { useState } from "react";
-import { IoMdEye } from "react-icons/io";
-import { MdModeEdit } from "react-icons/md";
-import ChessBoard from "../components/Game/ChessBoard";
 import StudyHelp from "../components/StudyHelp";
 import TournamentForm, { TournamentDetails } from "../components/TournamentForm";
 import useModalContext from "../hooks/useModalContext";

@@ -1,20 +1,20 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 interface Props {
     title: string
     description: string
     imgSrc?: string
+    imgAlt?: string
     onClickUrl: string
     /** is this page in development? */
     disabled?: boolean 
 }
 
-export default function HomeScreenCard({title, description, imgSrc, onClickUrl, disabled} : Props) {
+export default function HomeScreenCard({title, description, imgSrc, imgAlt, onClickUrl, disabled} : Props) {
     return (
         <div className="w-3/4 h-full flex flex-col items-center justify-center place-self-center bg-neutral-400 p-4">
             <div className="2xl:w-3/4">
-                <img className="opacity-75 w-full h-full object-fill" src={imgSrc}></img>
+                <img className="opacity-75 w-full h-full object-fill" src={imgSrc} alt={imgAlt}></img>
             </div>
             <h2>{title}</h2>
             <p>{description}</p>

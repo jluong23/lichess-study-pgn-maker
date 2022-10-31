@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { IconContext } from "react-icons/lib";
-import useModalContext from "../hooks/useModalContext";
 import {FaChessKing} from "react-icons/fa";
 import { ChessColor, ChessPlayer, ChessRound, getOppositeColor, Result } from "./TournamentForm";
 
@@ -13,6 +12,7 @@ interface RoundFormProps{
   
 export const RoundForm = ({editMode, player, round, setRounds}:RoundFormProps) => {  
     const [side, setSide] = useState(round.side);
+    const [url, setUrl] = useState(round.url);
     const [opponent, setOpponent] = useState(round.opponent);
     const [result, setResult] = useState(round.result);
     const [iconColor, setIconColor] = useState(side === 'White' ? 'Gray' : 'Black');
@@ -78,6 +78,14 @@ export const RoundForm = ({editMode, player, round, setRounds}:RoundFormProps) =
             <option value={'0-1'}>0-1</option>
             <option value={'1/2-1/2'}>&frac12;-&frac12;</option>
           </select>
+
+          <input 
+            disabled
+            className="w-max" 
+            placeholder="Lichess URL"
+            defaultValue={round.url}
+            onChange={e => {setUrl(e.target.value);}} 
+          />
       </div>
     )
   
