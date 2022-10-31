@@ -6,9 +6,11 @@ interface Props {
     description: string
     imgSrc?: string
     onClickUrl: string
+    /** is this page in development? */
+    disabled?: boolean 
 }
 
-export default function HomeScreenCard({title, description, imgSrc, onClickUrl} : Props) {
+export default function HomeScreenCard({title, description, imgSrc, onClickUrl, disabled} : Props) {
     return (
         <div className="w-3/4 h-full flex flex-col items-center justify-center place-self-center bg-neutral-400 p-4">
             <div className="2xl:w-3/4">
@@ -16,9 +18,13 @@ export default function HomeScreenCard({title, description, imgSrc, onClickUrl} 
             </div>
             <h2>{title}</h2>
             <p>{description}</p>
-            <Link className="pill-button bg-blue-400" to={onClickUrl}>
-                Go
-            </Link>
+            {disabled ? 
+                <button disabled className="pill-button bg-red-400">Under construction, check again soon!</button>
+                :
+                <Link className="pill-button bg-blue-400" to={onClickUrl}>
+                    Go
+                </Link>
+            }
         </div>
 
     )

@@ -37,7 +37,7 @@ export const ModalContextProvider = ({ children }) => {
       {state.visible && 
         <div onClick={backgroundClicked} id="modal-background" className="fixed inset-0 bg-opacity-30 bg-black backdrop-blur-sm flex justify-center items-center">
           {/* Modal */}
-          <div className="bg-white p-1 rounded w-max">
+          <div className="bg-white p-1 rounded w-max overflow-y-auto max-h-full">
               <AiFillCloseCircle className="right-0 float-right relative cursor-pointer text-lg" onClick={closeModal}/>
               <div className='p-5'>
                 {state.content}

@@ -37,16 +37,19 @@ export const RoundForm = ({editMode, player, round, setRounds}:RoundFormProps) =
     })}, [side, opponent, result])
   
     const editModeOutput = () => (
-      <div className="[&>div>input]:border-2 [&>div>select]:border-2">
-        <div id='player-color' className="flex flex-row items-center space-x-1">
-          <h2>{round.num})</h2>
-          <IconContext.Provider value ={{color: iconColor}}>
-            <FaChessKing className="cursor-pointer" onClick={toggleSide} />
-          </IconContext.Provider>
-          <p>vs</p>
-        </div>
+      <div>
+        {/*Round number and player color*/}
+          <div className="flex items-center space-x-1">
+            <h2>{round.num})</h2>
+            <IconContext.Provider value ={{color: iconColor}}>
+              <FaChessKing className="cursor-pointer" onClick={toggleSide} />
+            </IconContext.Provider>
+            <span>vs</span>
+            
 
-        <div id="opponent-details">
+          </div>
+
+          {/* opponent details */}
           <input 
             className="w-10" 
             placeholder="Title"
@@ -75,7 +78,6 @@ export const RoundForm = ({editMode, player, round, setRounds}:RoundFormProps) =
             <option value={'0-1'}>0-1</option>
             <option value={'1/2-1/2'}>&frac12;-&frac12;</option>
           </select>
-        </div>
       </div>
     )
   

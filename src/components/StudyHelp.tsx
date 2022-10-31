@@ -19,6 +19,7 @@ function StudyHelp() {
                         <li>You can edit opponent details for each round by clicking {editRoundsButton} </li>
                         <li>View pairings by clicking {viewRoundsButton}</li>
                         <li>Change the side you played by clicking the {kingIcon} icon.</li>
+                        <li>Played online or already imported into lichess? Copy the game URl to transfer the moves over.</li>
                     </ul>
                 </li>
                 <li>
@@ -30,6 +31,9 @@ function StudyHelp() {
                     <div className="w-[70%] h-[70%] ml-auto mr-auto">
                         <img className="opacity-75 w-full h-full" src={`${process.env.PUBLIC_URL}/assets/home/studypgn-tutorial.gif`}></img>
                     </div>
+                </li>
+                <li>
+                    Until the Board Editor is made, all games will be the Evans Gambit :)
                 </li>
             </ol>
         </div>
