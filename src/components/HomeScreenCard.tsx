@@ -7,10 +7,10 @@ interface Props {
     imgAlt?: string
     onClickUrl: string
     /** is this page in development? */
-    disabled?: boolean 
+    inDevelopment?: boolean 
 }
 
-export default function HomeScreenCard({title, description, imgSrc, imgAlt, onClickUrl, disabled} : Props) {
+export default function HomeScreenCard({title, description, imgSrc, imgAlt, onClickUrl, inDevelopment} : Props) {
     return (
         <div className="w-3/4 h-full flex flex-col items-center justify-center place-self-center bg-neutral-400 p-4">
             <div className="2xl:w-3/4">
@@ -18,7 +18,7 @@ export default function HomeScreenCard({title, description, imgSrc, imgAlt, onCl
             </div>
             <h2>{title}</h2>
             <p>{description}</p>
-            {disabled ? 
+            {inDevelopment ? 
                 <button disabled className="pill-button bg-red-400">Under construction, check again soon!</button>
                 :
                 <Link className="pill-button bg-blue-400" to={onClickUrl}>

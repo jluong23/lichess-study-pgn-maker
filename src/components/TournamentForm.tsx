@@ -51,7 +51,6 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
    
     const [editMode, setEditMode] = useState(false);
 
-    // 
     const [studyPgn, setStudyPgn] = useState<string>(''); //generated on form submit
     const [numSubmitClicked, setNumSubmitClicked] = useState(1); //number of times submit button is clicked, useful for useEffect dependency, opening modal
 
