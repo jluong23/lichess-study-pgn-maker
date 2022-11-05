@@ -6,14 +6,6 @@ import useModalContext from "../hooks/useModalContext";
 function Study() {
   const modalContext = useModalContext();
   const [tournamentDetails, setTournamentDetails] = useState({player: {}} as TournamentDetails);
-  const tournamentFormButton = (
-    <button 
-      className="bg-blue-400 pill-button"
-      onClick={() => {modalContext.openModal(<TournamentForm tournamentDetails={tournamentDetails} setTournamentDetails={setTournamentDetails}/>)}}>
-        Edit Tournament Details 
-    </button>
-  )
-
 
   const helpButton = (
     <button 
@@ -28,7 +20,6 @@ function Study() {
         <h2>Study PGN Maker</h2>
         {helpButton}
         <TournamentForm tournamentDetails={tournamentDetails} setTournamentDetails={setTournamentDetails}/>
-        {/* <ChessBoard/> */}
     </div>
   );
 }

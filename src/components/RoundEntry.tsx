@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IconContext } from "react-icons/lib";
 import {FaChessKing} from "react-icons/fa";
 import { ChessColor, ChessPlayer, ChessRound, getOppositeColor, Result } from "./TournamentForm";
 
-interface RoundFormProps{
+interface RoundEntryProps{
     player: ChessPlayer // the player details, used for formatting in view mode
     round: ChessRound //the round to render the form for
     setRounds: any //setter for parent state (TournamentForm)
     editMode: boolean
   }
   
-export const RoundForm = ({editMode, player, round, setRounds}:RoundFormProps) => {  
+export const RoundEntry = ({editMode, player, round, setRounds}:RoundEntryProps) => {  
     const [side, setSide] = useState(round.side);
     const [url, setUrl] = useState(round.url);
     const [opponent, setOpponent] = useState(round.opponent);
@@ -29,15 +29,15 @@ export const RoundForm = ({editMode, player, round, setRounds}:RoundFormProps) =
     useEffect(() => {setRounds((oldRounds:ChessRound[]) => {
       return oldRounds.map((r) => {
         if(r.num === round.num){
-          return {side, opponent, result, num:round.num} as ChessRound 
+          return {side, opponent, result, url, num:round.num} as ChessRound 
         }else{
           return r;
         }
       })
-    })}, [side, opponent, result])
+    })}, [side, opponent, result, url])
   
     const editModeOutput = () => (
-      <div>
+      <React.Fragment>
         {/*Round number and player color*/}
           <div className="flex items-center space-x-1">
             <h2>{round.num})</h2>
@@ -45,48 +45,45 @@ export const RoundForm = ({editMode, player, round, setRounds}:RoundFormProps) =
               <FaChessKing className="cursor-pointer" onClick={toggleSide} />
             </IconContext.Provider>
             <span>vs</span>
-            
-
           </div>
-
-          {/* opponent details */}
-          <input 
-            className="w-10" 
-            placeholder="Title"
-            defaultValue={opponent.title}
-            onChange={(e) => {setOpponent(
-              (old) => {return {...old, title: e.target.value}})}}
+          <div className="space-x-1">
+            {/* opponent details */}
+            <input 
+              className="w-10" 
+              placeholder="Title"
+              defaultValue={opponent.title}
+              onChange={(e) => {setOpponent(
+                (old) => {return {...old, title: e.target.value}})}}
+              />
+            <input 
+              placeholder="Name" 
+              defaultValue={opponent.name}
+              onChange={(e) => {setOpponent((old) => {return {...old, name: e.target.value}})}}
             />
-          <input 
-            placeholder="Name" 
-            defaultValue={opponent.name}
-            onChange={(e) => {setOpponent((old) => {return {...old, name: e.target.value}})}}
-          />
-          <input 
-            className="w-14" 
-            type={"number"} 
-            placeholder="ELO"
-            defaultValue={opponent.elo}
-            onChange={(e) => {setOpponent(
-              (old) => {return {...old, elo: parseInt(e.target.value)}})}}
-          />
-          <select 
-            onChange={(e) => {setResult(e.target.value as Result);}}
-            defaultValue={result}
-          >
-            <option value={'1-0'}>1-0</option>
-            <option value={'0-1'}>0-1</option>
-            <option value={'1/2-1/2'}>&frac12;-&frac12;</option>
-          </select>
+            <input 
+              className="w-14" 
+              type={"number"} 
+              placeholder="ELO"
+              defaultValue={opponent.elo}
+              onChange={(e) => {setOpponent(
+                (old) => {return {...old, elo: parseInt(e.target.value)}})}}
+            />
+            <select 
+              onChange={(e) => {setResult(e.target.value as Result);}}
+              defaultValue={result}
+            >
+              <option value={'1-0'}>1-0</option>
+              <option value={'0-1'}>0-1</option>
+              <option value={'1/2-1/2'}>&frac12;-&frac12;</option>
+            </select>
 
-          <input 
-            disabled
-            className="w-max" 
-            placeholder="Lichess URL"
-            defaultValue={round.url}
-            onChange={e => {setUrl(e.target.value);}} 
-          />
-      </div>
+            <input 
+              placeholder="Lichess URL"
+              defaultValue={round.url}
+              onChange={e => {setUrl(e.target.value);}} 
+            />
+          </div>
+      </React.Fragment>
     )
   
     const viewModeOutput = () => {
@@ -110,12 +107,16 @@ export const RoundForm = ({editMode, player, round, setRounds}:RoundFormProps) =
         </span>
 
       return (
-          <div>
+          <React.Fragment>
               <h3>{round.num}) {pairing} [{round.result}]</h3>
-          </div>
+          </React.Fragment>
       )
     }
         
   
-    return editMode ? editModeOutput() : viewModeOutput()
+    return (
+      <div className="round-entry">
+        {editMode ? editModeOutput() : viewModeOutput()}
+      </div>
+    )
   }

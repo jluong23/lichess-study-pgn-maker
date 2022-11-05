@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { RoundForm } from "./RoundForm";
+import { RoundEntry } from "./RoundEntry";
 import {MdModeEdit} from"react-icons/md"
 import {IoMdEye} from "react-icons/io"
 import useModalContext from "../hooks/useModalContext";
@@ -83,12 +83,11 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
       if(rounds && rounds.length >= 1){
         setRounds(rounds.slice(0,rounds.length-1));
       }
-    }    
-
-
-    const formSubmit = (e: React.FormEvent) => {      
+    }
+  
+    const formSubmit = async (e: React.FormEvent) => {      
       e.preventDefault();
-      if(!rounds || (rounds && rounds.length == 0)){
+      if(!rounds || (rounds && rounds.length === 0)){
         modalContext.openModal(<p>Please add at least one round to proceed.</p>)
         return;
       }
@@ -96,18 +95,39 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
       const newDetails:TournamentDetails = {player, tournament, rounds, date, timeControl}
       setTournamentDetails(newDetails);     
 
+      const newStudyPgn = await createStudyPGN();
+      
       // update states for this component
-      setStudyPgn(createStudyPGN());
+      setStudyPgn(newStudyPgn);
       setNumSubmitClicked(numSubmitClicked+1);
     }
     
-    const createRoundPGN = (round:ChessRound) => {
+    /**
+     * Get the moves of a chess game played on lichess.
+     * @param gameUrl The url of the game
+     */
+    const fetchMoves = async (gameUrl: string) => {
+      // extract game id, string of length 8
+      const re = new RegExp('(https:\/\/lichess.org\/)(\\w{8})')
+      const match = re.exec(gameUrl);
+      if(!match){
+        return ''
+      }
+      const gameId = match[2];
+      // get request to API to get game. Remove tags computer evaluation and clock data, keeping only moves
+      let response = await fetch(`https://lichess.org/game/export/${gameId}?tags=false&evals=false&clocks=false`);
+      let responseText = await response.text();
+      return responseText;
+    }
+
+    const createRoundPGN = async (round:ChessRound) => {
       if(!round){
         return ''
       }
       const white = round.side === 'White' ? player : round.opponent;
       const black = round.side === 'Black' ? player : round.opponent;
-      const moves = "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bxb4 5. c3 Ba5 6. d4 exd4 7. O-O" //TODO: Plays the evans gambit
+      // if a lichess link exists, fetch the moves. Otherwise use 1. e4 e5
+      const moves = round.url && round.url.length > 0 ? await fetchMoves(round.url) : "1. e4 e5";
       const pgn = 
 `[Date "${date || ''}"]
 [White "${white.name || ''}"]
@@ -121,18 +141,28 @@ function TournamentForm({tournamentDetails, setTournamentDetails}:TournamentForm
 [TimeControl "${timeControl || ''}"]
 [Round "${round.num}"]
 [Variant "Standard"]
-
 ${moves}
 `
       return pgn
     }
 
-    const createStudyPGN = () => {
+    const createStudyPGN = async () => {
       if(!rounds){
         return ''
       }
-      const studyPgn = rounds.map((r) => {return createRoundPGN(r)})
-      return studyPgn.join('\n');
+      let output = '';
+      const pgnPromises:Promise<string>[] = []
+
+      rounds.forEach((r) => {
+        // create promises to create PGN for each round
+        pgnPromises.push(createRoundPGN(r));
+      })
+
+      // wait for all promises to pgns to be created, then return as string
+      await Promise.all(pgnPromises).then((vals) => {
+        output = vals.join("\n")}
+      ) 
+      return output;
     }
 
     const detailsForm = (
@@ -193,7 +223,7 @@ ${moves}
             }
           </span>
           {rounds && rounds.map((round, i) => {
-            return <RoundForm editMode={editMode} player={player} round={round} setRounds={setRounds} key={round.num}/>
+            return <RoundEntry editMode={editMode} player={player} round={round} setRounds={setRounds} key={round.num}/>
           })}
 
           <span className="space-x-1">
