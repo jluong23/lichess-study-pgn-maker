@@ -15,26 +15,28 @@ function StudyHelp({ page }: Props) {
     const kingIcon = <button><FaChessKing className="align-text-bottom" /></button>
 
     const pageOneContent = (
-        <p>Fill in the <em>Tournament Details</em> form, clicking <em>Next</em> when complete.
+        <div>Fill in the <em>Tournament Details</em> form, clicking <em>Next</em> when complete.
             <ul>
                 <li>Click {addRoundButton} and {popRoundButton} to add and delete rounds.</li>
                 <li>You can edit opponent details for each round by clicking {editRoundsButton} </li>
                 <li>View pairings by clicking {viewRoundsButton}</li>
                 <li>Change the side you played by clicking the {kingIcon} icon.</li>
-                {/* <li>Played online or already imported into Lichess? Copy the game URL to transfer the moves over.</li> */}
+                <li>Played online or already imported into Lichess? Add the <em>Lichess URL</em> to add the moves.</li>
             </ul>
-        </p>
+
+        </div>
     )
     const pageTwoContent = (
-        <p>
+        <div> A Study PGN should be generated for you. Copy the PGN to your clipboard.
             <ul>
                 <li>Create or open an existing study on <a className="hyperlink" href="https://lichess.org/study"> https://lichess.org/study</a></li>
-                <li>Import your rounds via <em>'Add a new chapter' - 'PGN'</em></li>
+                <li>Navigate to <em>'Add a new chapter' - 'PGN'</em></li>
+                <li>Import your rounds by pasting the PGN in.</li>
             </ul>
             <div className="w-[70%] h-[70%] ml-auto mr-auto">
                 <img alt="Chess openings quiz gif, caro kann main line" className="opacity-75 w-full h-full" src={`${process.env.PUBLIC_URL}/assets/home/studypgn-tutorial.gif`}></img>
             </div>
-        </p>
+        </div>
     )
 
     // assign content variable from props.page

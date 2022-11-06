@@ -26,7 +26,7 @@ function Quiz() {
       <h2>Chess Openings Quiz</h2>
       <p>How well do you know your openings?</p>
       <p className="text-center">
-        Data set retrieved from <a className="hyperlink" href="https://github.com/lichess-org/chess-openings">Lichess</a>
+        Data set retrieved and adapted from <a className="hyperlink" href="https://github.com/lichess-org/chess-openings">Lichess</a>
       </p>
       <div id="options" className="space-x-2">
         <button className="pill-button bg-slate-400" onClick={() => {modalContext.openModal(<QuizHelp/>)}}> Rules {rulesIcon} </button>
