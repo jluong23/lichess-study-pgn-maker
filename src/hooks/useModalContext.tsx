@@ -4,10 +4,16 @@ import { ModalContext } from "../context/ModalContext";
 export const useModalContext = () => {
     const context = useContext(ModalContext);
 
-    const openModal = (content:any) => {
+    /**
+     * 
+     * @param content The JSX content. Using an array will place the content on separate pages, providing next and back buttons. 
+     * TODO: This content should be generated statically however.
+     * @param maxPages The max pages shown on bottom left of modal
+     */
+    const openModal = (content:JSX.Element[] | JSX.Element) => {
         context.dispatch({
             type: 'OPEN',
-            payload: content
+            payload: content,
         })
     }
 
