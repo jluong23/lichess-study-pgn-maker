@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { IconContext } from "react-icons/lib";
 import {FaChessKing} from "react-icons/fa";
-import { ChessColor, ChessPlayer, ChessRound, getOppositeColor, Result } from "./TournamentForm";
+import { ChessColor, ChessPlayer, ChessRound, getGameId, getOppositeColor, Result } from "./TournamentForm";
 
 interface RoundEntryProps{
     player: ChessPlayer // the player details, used for formatting in view mode
@@ -106,9 +106,16 @@ export const RoundEntry = ({editMode, player, round, setRounds}:RoundEntryProps)
        {opponentName} vs {playerName} 
         </span>
 
+      
+      // provide link to game if valid (game id can be retrieved from game, but not necessarily a valid id)
+      const roundResult = getGameId(round.url) ? 
+        <a className="hyperlink" href={round.url}>[{round.result}]</a> 
+        : 
+        <React.Fragment>[{round.result}]</React.Fragment>;
+
       return (
           <React.Fragment>
-              <h3>{round.num}) {pairing} [{round.result}]</h3>
+              <h3>{round.num}) {pairing} {roundResult}</h3>
           </React.Fragment>
       )
     }
