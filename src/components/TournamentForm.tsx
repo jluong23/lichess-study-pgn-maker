@@ -58,19 +58,31 @@ export const getGameId = (lichessUrl: string) => {
 }
 
 /**
- * Get the moves of a chess game played on lichess.
+ * Returns a promise the moves of a chess game played on lichess.
  * @param gameUrl The url of the game
  */
-const fetchMoves = async (gameUrl: string) => {
+const fetchMoves = (gameUrl: string) => {
 	const gameId = getGameId(gameUrl);
-	if (gameId) {
-		// get request to API to get game. Remove tags computer evaluation and clock data, keeping only moves
-		let response = await fetch(`https://lichess.org/game/export/${gameId}?tags=false&evals=false&clocks=false`);
-		let responseText = await response.text();
-		return responseText;
-	} else {
+	if (!gameId) {
 		return '';
 	}
+	// get request to API to get game. Remove tags computer evaluation and clock data, keeping only moves
+	return fetch(`https://lichess.org/game/export/${gameId}?tags=false&evals=false&clocks=false`)
+		.then((response) => {
+			if (response.ok) {
+				return response.text()
+			} else if (response.status === 404) {
+				// for 404 errors: invalid game urls
+				return Promise.reject(`Invalid Game URL ${gameUrl}\n`)
+			} else {
+				return Promise.reject(`An error occured while fetching ${gameUrl}\n`)
+			}
+		})
+		.then((responseText) => { return responseText })
+		.catch((e) => {
+			// throw error with the promise reject message
+			throw new Error(e)
+		})
 }
 
 function TournamentForm({ tournamentDetails, setTournamentDetails }: TournamentFormProps) {
@@ -140,8 +152,18 @@ function TournamentForm({ tournamentDetails, setTournamentDetails }: TournamentF
 		}
 		const white = round.side === 'White' ? player : round.opponent;
 		const black = round.side === 'Black' ? player : round.opponent;
-		// if a round url exists and is valid (has a game id), fetch the moves. Otherwise use 1. e4 e5
-		const moves = round.url && round.url.length > 0 && getGameId(round.url) ? await fetchMoves(round.url) : "1. e4 e5";
+		let moves = "";
+		// if a lichess round url exists and is valid (has a game id), fetch the moves
+		if (round.url && round.url.length > 0 && getGameId(round.url)) {
+			try {
+				moves = await fetchMoves(round.url);
+			} catch (error: any) {
+				// don't show PGN, return the error message
+				return error;
+			}
+		}
+
+
 		const pgn =
 			`[Date "${date || ''}"]
 [White "${white.name || ''}"]
