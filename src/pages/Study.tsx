@@ -1,6 +1,6 @@
 import { useState } from "react";
-import StudyHelp from "../components/StudyHelp";
-import TournamentForm, { TournamentDetails } from "../components/TournamentForm";
+import StudyHelp from "../components/Study/StudyHelp";
+import TournamentForm, { TournamentDetails } from "../components/Study/TournamentForm";
 import useModalContext from "../hooks/useModalContext";
 
 function Study() {

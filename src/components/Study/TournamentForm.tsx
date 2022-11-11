@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { RoundEntry } from "./RoundEntry";
 import { MdModeEdit } from "react-icons/md"
 import { IoMdEye } from "react-icons/io"
-import useModalContext from "../hooks/useModalContext";
+import useModalContext from "../../hooks/useModalContext";
 import TournamentFormModal from "./TournmanentFormModal";
 
 export type ChessColor = 'White' | 'Black';

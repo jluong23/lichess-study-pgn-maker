@@ -2,8 +2,8 @@ import {BsHeart, BsHeartFill} from "react-icons/bs";
 import { IconContext } from "react-icons/lib";
 
 interface Props{
-    maxLives: number // 3
-    currentLife: number // 2
+    maxLives: number
+    currentLife: number
 }
 
 function QuizLifeBar({maxLives, currentLife} : Props) {
@@ -18,7 +18,7 @@ function QuizLifeBar({maxLives, currentLife} : Props) {
         else{
             // pushed filled hearts
             heartElements.push(
-                <IconContext.Provider value ={{color: 'red'}}>
+                <IconContext.Provider key={i} value ={{color: 'red'}}>
                     <BsHeartFill key={i}/>
                 </IconContext.Provider>
             );

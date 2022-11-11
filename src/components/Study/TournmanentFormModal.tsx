@@ -1,4 +1,4 @@
-import CopyButton from "./CopyButton";
+import CopyButton from "../CopyButton";
 import { useState } from "react";
 
 interface Props {

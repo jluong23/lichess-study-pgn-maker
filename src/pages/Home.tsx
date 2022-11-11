@@ -1,4 +1,4 @@
-import HomeScreenCard from "../components/HomeScreenCard";
+import HomeScreenCard from "../components/Home/HomeScreenCard";
 
 function Home() {
 
