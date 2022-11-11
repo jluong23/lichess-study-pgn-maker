@@ -7,6 +7,9 @@ module.exports = {
   content: ["./src/**/*.{html,js,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        'orbitron' : ['Orbitron', "sans-serif"]
+      },
       colors: {
         primary: colors.blue[400],
         background: colors.neutral[300]

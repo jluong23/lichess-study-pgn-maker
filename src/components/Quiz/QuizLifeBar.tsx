@@ -25,7 +25,7 @@ function QuizLifeBar({maxLives, currentLife} : Props) {
         }
     }    
     return(
-        <span className="flex space-x-1 items-center text-3xl">
+        <span className="flex flex-1 space-x-1 items-center text-3xl">
             {heartElements.map((h) => {return h})}
             
         </span>
