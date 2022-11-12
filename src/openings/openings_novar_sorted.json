@@ -1,1563 +1,15 @@
 [
     {
-        "name": "Amar Gambit",
-        "eco": "A00",
-        "pgn": "1. Nh3 d5 2. g3 e5 3. f4 Bxh3 4. Bxh3 exf4",
-        "fen": "rn1qkbnr/ppp2ppp/8/3p4/5p2/6PB/PPPPP2P/RNBQK2R w KQkq - 0 5",
-        "winrate": [
-            320,
-            260,
-            23
-        ],
-        "games": 603
-    },
-    {
-        "name": "Pterodactyl Defense",
-        "eco": "A42",
-        "pgn": "1. Nf3 c5 2. c4 g6 3. d4 Bg7 4. e4 Qa5+ 5. Nc3 d6",
-        "fen": "rnb1k1nr/pp2ppbp/3p2p1/q1p5/2PPP3/2N2N2/PP3PPP/R1BQKB1R w KQkq - 0 6",
-        "winrate": [
-            259,
-            419,
-            40
-        ],
-        "games": 718
-    },
-    {
-        "name": "Amsterdam Attack",
-        "eco": "A00",
-        "pgn": "1. e3 e5 2. c4 d6 3. Nc3 Nc6 4. b3 Nf6",
-        "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2P5/1PN1P3/P2P1PPP/R1BQKBNR w KQkq - 1 5",
-        "winrate": [
-            425,
-            431,
-            32
-        ],
-        "games": 888
-    },
-    {
-        "name": "Venezolana Opening",
-        "eco": "A00",
-        "pgn": "1. d3 c5 2. Nc3 Nc6 3. g3",
-        "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/8/2NP2P1/PPP1PP1P/R1BQKBNR b KQkq - 0 3",
-        "winrate": [
-            532,
-            573,
-            47
-        ],
-        "games": 1152
-    },
-    {
-        "name": "Zaire Defense",
-        "eco": "A40",
-        "pgn": "1. d4 Nc6 2. d5 Nb8 3. e4 Nf6 4. e5 Ng8",
-        "fen": "rnbqkbnr/pppppppp/8/3PP3/8/8/PPP2PPP/RNBQKBNR w KQkq - 1 5",
-        "winrate": [
-            821,
-            615,
-            62
-        ],
-        "games": 1498
-    },
-    {
-        "name": "Queen's Pawn, Mengarini Attack",
-        "eco": "E60",
-        "pgn": "1. d4 Nf6 2. c4 g6 3. Qc2",
-        "fen": "rnbqkb1r/pppppp1p/5np1/8/2PP4/8/PPQ1PPPP/RNB1KBNR b KQkq - 1 3",
-        "winrate": [
-            862,
-            1080,
-            62
-        ],
-        "games": 2004
-    },
-    {
-        "name": "Norwegian Defense",
-        "eco": "B06",
-        "pgn": "1. e4 g6 2. d4 Nf6 3. e5 Nh5 4. g4 Ng7",
-        "fen": "rnbqkb1r/ppppppnp/6p1/4P3/3P2P1/8/PPP2P1P/RNBQKBNR w KQkq - 1 5",
-        "winrate": [
-            1749,
-            2487,
-            185
-        ],
-        "games": 4421
-    },
-    {
-        "name": "Marienbad System",
-        "eco": "A47",
-        "pgn": "1. d4 Nf6 2. Nf3 b6 3. g3 Bb7 4. Bg2 c5",
-        "fen": "rn1qkb1r/pb1ppppp/1p3n2/2p5/3P4/5NP1/PPP1PPBP/RNBQK2R w KQkq - 0 5",
-        "winrate": [
-            3017,
-            3092,
-            506
-        ],
-        "games": 6615
-    },
-    {
-        "name": "Blumenfeld Countergambit Accepted",
-        "eco": "E10",
-        "pgn": "1. d4 Nf6 2. c4 e6 3. Nf3 c5 4. d5 b5 5. dxe6 fxe6 6. cxb5 d5",
-        "fen": "rnbqkb1r/p5pp/4pn2/1Ppp4/8/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 7",
-        "winrate": [
-            4094,
-            3734,
-            391
-        ],
-        "games": 8219
-    },
-    {
-        "name": "English Orangutan",
-        "eco": "A15",
-        "pgn": "1. c4 Nf6 2. b4",
-        "fen": "rnbqkb1r/pppppppp/5n2/8/1PP5/8/P2PPPPP/RNBQKBNR b KQkq - 0 2",
-        "winrate": [
-            6636,
-            7575,
-            702
-        ],
-        "games": 14913
-    },
-    {
-        "name": "Bongcloud Attack",
-        "eco": "C20",
-        "pgn": "1. e4 e5 2. Ke2",
-        "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPPKPPP/RNBQ1BNR b kq - 1 2",
-        "winrate": [
-            5760,
-            8523,
-            711
-        ],
-        "games": 14994
-    },
-    {
-        "name": "Australian Defense",
-        "eco": "A40",
-        "pgn": "1. d4 Na6",
-        "fen": "r1bqkbnr/pppppppp/n7/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 1 2",
-        "winrate": [
-            8416,
-            7514,
-            782
-        ],
-        "games": 16712
-    },
-    {
-        "name": "Vulture Defense",
-        "eco": "A56",
-        "pgn": "1. d4 Nf6 2. c4 c5 3. d5 Ne4",
-        "fen": "rnbqkb1r/pp1ppppp/8/2pP4/2P1n3/8/PP2PPPP/RNBQKBNR w KQkq - 1 4",
-        "winrate": [
-            7601,
-            9311,
-            860
-        ],
-        "games": 17772
-    },
-    {
-        "name": "Crab Opening",
-        "eco": "A00",
-        "pgn": "1. a4 e5 2. h4",
-        "fen": "rnbqkbnr/pppp1ppp/8/4p3/P6P/8/1PPPPPP1/RNBQKBNR b KQkq - 0 2",
-        "winrate": [
-            9976,
-            10178,
-            755
-        ],
-        "games": 20909
-    },
-    {
-        "name": "Montevideo Defense",
-        "eco": "A40",
-        "pgn": "1. d4 Nc6 2. d5 Nb8",
-        "fen": "rnbqkbnr/pppppppp/8/3P4/8/8/PPP1PPPP/RNBQKBNR w KQkq - 1 3",
-        "winrate": [
-            11834,
-            9748,
-            878
-        ],
-        "games": 22460
-    },
-    {
-        "name": "D\u00c3\u00b6ry Defense",
-        "eco": "A46",
-        "pgn": "1. d4 Nf6 2. Nf3 Ne4",
-        "fen": "rnbqkb1r/pppppppp/8/8/3Pn3/5N2/PPP1PPPP/RNBQKB1R w KQkq - 3 3",
-        "winrate": [
-            12731,
-            10500,
-            689
-        ],
-        "games": 23920
-    },
-    {
-        "name": "Lemming Defense",
+        "name": "King's Pawn",
         "eco": "B00",
-        "pgn": "1. e4 Na6",
-        "fen": "r1bqkbnr/pppppppp/n7/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2",
+        "pgn": "1. e4",
+        "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
         "winrate": [
-            13507,
-            11583,
-            1036
+            182613212,
+            173636682,
+            16653339
         ],
-        "games": 26126
-    },
-    {
-        "name": "Irish Gambit",
-        "eco": "C44",
-        "pgn": "1. e4 e5 2. Nf3 Nc6 3. Nxe5",
-        "fen": "r1bqkbnr/pppp1ppp/2n5/4N3/4P3/8/PPPP1PPP/RNBQKB1R b KQkq - 0 3",
-        "winrate": [
-            14512,
-            17115,
-            891
-        ],
-        "games": 32518
-    },
-    {
-        "name": "Global Opening",
-        "eco": "A00",
-        "pgn": "1. h3 e5 2. a3",
-        "fen": "rnbqkbnr/pppp1ppp/8/4p3/8/P6P/1PPPPPP1/RNBQKBNR b KQkq - 0 2",
-        "winrate": [
-            18230,
-            19579,
-            1517
-        ],
-        "games": 39326
-    },
-    {
-        "name": "Robatsch Defense",
-        "eco": "A41",
-        "pgn": "1. d4 d6 2. Nf3 g6 3. c4 Bg7 4. e4 Bg4",
-        "fen": "rn1qk1nr/ppp1ppbp/3p2p1/8/2PPP1b1/5N2/PP3PPP/RNBQKB1R w KQkq - 1 5",
-        "winrate": [
-            19196,
-            20249,
-            2155
-        ],
-        "games": 41600
-    },
-    {
-        "name": "Sodium Attack",
-        "eco": "A00",
-        "pgn": "1. Na3",
-        "fen": "rnbqkbnr/pppppppp/8/8/8/N7/PPPPPPPP/R1BQKBNR b KQkq - 1 1",
-        "winrate": [
-            21596,
-            20931,
-            1750
-        ],
-        "games": 44277
-    },
-    {
-        "name": "Hippopotamus Defense",
-        "eco": "B00",
-        "pgn": "1. e4 Nh6",
-        "fen": "rnbqkb1r/pppppppp/7n/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2",
-        "winrate": [
-            23245,
-            21445,
-            1660
-        ],
-        "games": 46350
-    },
-    {
-        "name": "Fried Fox Defense",
-        "eco": "B00",
-        "pgn": "1. e4 f6 2. d4 Kf7",
-        "fen": "rnbq1bnr/pppppkpp/5p2/8/3PP3/8/PPP2PPP/RNBQKBNR w KQ - 1 3",
-        "winrate": [
-            28476,
-            22304,
-            2066
-        ],
-        "games": 52846
-    },
-    {
-        "name": "Amazon Attack",
-        "eco": "D00",
-        "pgn": "1. d4 d5 2. Qd3",
-        "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/3Q4/PPP1PPPP/RNB1KBNR b KQkq - 1 2",
-        "winrate": [
-            27262,
-            28798,
-            2073
-        ],
-        "games": 58133
-    },
-    {
-        "name": "Rubinstein Opening",
-        "eco": "D05",
-        "pgn": "1. d4 Nf6 2. Nf3 e6 3. e3 c5 4. Bd3 d5 5. b3",
-        "fen": "rnbqkb1r/pp3ppp/4pn2/2pp4/3P4/1P1BPN2/P1P2PPP/RNBQK2R b KQkq - 0 5",
-        "winrate": [
-            45994,
-            37770,
-            4386
-        ],
-        "games": 88150
-    },
-    {
-        "name": "Guatemala Defense",
-        "eco": "B00",
-        "pgn": "1. e4 b6 2. d4 Ba6",
-        "fen": "rn1qkbnr/p1pppppp/bp6/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 1 3",
-        "winrate": [
-            50842,
-            41014,
-            4012
-        ],
-        "games": 95868
-    },
-    {
-        "name": "Valencia Opening",
-        "eco": "A00",
-        "pgn": "1. d3 e5 2. Nd2",
-        "fen": "rnbqkbnr/pppp1ppp/8/4p3/8/3P4/PPPNPPPP/R1BQKBNR b KQkq - 1 2",
-        "winrate": [
-            52166,
-            46078,
-            3287
-        ],
-        "games": 101531
-    },
-    {
-        "name": "Portuguese Opening",
-        "eco": "C20",
-        "pgn": "1. e4 e5 2. Bb5",
-        "fen": "rnbqkbnr/pppp1ppp/8/1B2p3/4P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
-        "winrate": [
-            56097,
-            57147,
-            4454
-        ],
-        "games": 117698
-    },
-    {
-        "name": "Wade Defense",
-        "eco": "A41",
-        "pgn": "1. d4 d6 2. Nf3 Bg4",
-        "fen": "rn1qkbnr/ppp1pppp/3p4/8/3P2b1/5N2/PPP1PPPP/RNBQKB1R w KQkq - 2 3",
-        "winrate": [
-            64721,
-            56976,
-            7689
-        ],
-        "games": 129386
-    },
-    {
-        "name": "Semi-Slav Defense Accepted",
-        "eco": "D44",
-        "pgn": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6 5. Bg5 dxc4",
-        "fen": "rnbqkb1r/pp3ppp/2p1pn2/6B1/2pP4/2N2N2/PP2PPPP/R2QKB1R w KQkq - 0 6",
-        "winrate": [
-            66379,
-            66158,
-            6416
-        ],
-        "games": 138953
-    },
-    {
-        "name": "Gunderam Defense",
-        "eco": "C40",
-        "pgn": "1. e4 e5 2. Nf3 Qe7",
-        "fen": "rnb1kbnr/ppppqppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
-        "winrate": [
-            77523,
-            71558,
-            5802
-        ],
-        "games": 154883
-    },
-    {
-        "name": "Kangaroo Defense",
-        "eco": "A40",
-        "pgn": "1. d4 e6 2. c4 Bb4+",
-        "fen": "rnbqk1nr/pppp1ppp/4p3/8/1bPP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3",
-        "winrate": [
-            82980,
-            68285,
-            7871
-        ],
-        "games": 159136
-    },
-    {
-        "name": "Paleface Attack",
-        "eco": "A45",
-        "pgn": "1. d4 Nf6 2. f3",
-        "fen": "rnbqkb1r/pppppppp/5n2/8/3P4/5P2/PPP1P1PP/RNBQKBNR b KQkq - 0 2",
-        "winrate": [
-            74069,
-            80371,
-            6546
-        ],
-        "games": 160986
-    },
-    {
-        "name": "Queen's Indian Accelerated",
-        "eco": "A50",
-        "pgn": "1. d4 Nf6 2. c4 b6",
-        "fen": "rnbqkb1r/p1pppppp/1p3n2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
-        "winrate": [
-            89180,
-            82871,
-            9128
-        ],
-        "games": 181179
-    },
-    {
-        "name": "Mexican Defense",
-        "eco": "A50",
-        "pgn": "1. d4 Nf6 2. c4 Nc6",
-        "fen": "r1bqkb1r/pppppppp/2n2n2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3",
-        "winrate": [
-            87654,
-            90779,
-            9070
-        ],
-        "games": 187503
-    },
-    {
-        "name": "King's Pawn Opening",
-        "eco": "C20",
-        "pgn": "1. e4 e5 2. b3",
-        "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/1P6/P1PP1PPP/RNBQKBNR b KQkq - 0 2",
-        "winrate": [
-            94242,
-            107337,
-            8020
-        ],
-        "games": 209599
-    },
-    {
-        "name": "Amar Opening",
-        "eco": "A00",
-        "pgn": "1. Nh3",
-        "fen": "rnbqkbnr/pppppppp/8/8/8/7N/PPPPPPPP/RNBQKB1R b KQkq - 1 1",
-        "winrate": [
-            102877,
-            99993,
-            7945
-        ],
-        "games": 210815
-    },
-    {
-        "name": "Carr Defense",
-        "eco": "B00",
-        "pgn": "1. e4 h6",
-        "fen": "rnbqkbnr/ppppppp1/7p/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            118413,
-            97803,
-            8313
-        ],
-        "games": 224529
-    },
-    {
-        "name": "Pseudo Queen's Indian Defense",
-        "eco": "A47",
-        "pgn": "1. d4 Nf6 2. Nf3 b6",
-        "fen": "rnbqkb1r/p1pppppp/1p3n2/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3",
-        "winrate": [
-            110131,
-            101077,
-            14071
-        ],
-        "games": 225279
-    },
-    {
-        "name": "Canard Opening",
-        "eco": "A45",
-        "pgn": "1. d4 Nf6 2. f4",
-        "fen": "rnbqkb1r/pppppppp/5n2/8/3P1P2/8/PPP1P1PP/RNBQKBNR b KQkq - 0 2",
-        "winrate": [
-            116513,
-            116045,
-            11992
-        ],
-        "games": 244550
-    },
-    {
-        "name": "Borg Defense",
-        "eco": "B00",
-        "pgn": "1. e4 g5",
-        "fen": "rnbqkbnr/pppppp1p/8/6p1/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            131759,
-            115522,
-            8215
-        ],
-        "games": 255496
-    },
-    {
-        "name": "Polish Defense",
-        "eco": "A40",
-        "pgn": "1. d4 b5",
-        "fen": "rnbqkbnr/p1pppppp/8/1p6/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            138972,
-            131112,
-            11600
-        ],
-        "games": 281684
-    },
-    {
-        "name": "Goldsmith Defense",
-        "eco": "B00",
-        "pgn": "1. e4 h5",
-        "fen": "rnbqkbnr/ppppppp1/8/7p/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            142647,
-            129552,
-            9577
-        ],
-        "games": 281776
-    },
-    {
-        "name": "Latvian Gambit Accepted",
-        "eco": "C40",
-        "pgn": "1. e4 e5 2. Nf3 f5 3. exf5",
-        "fen": "rnbqkbnr/pppp2pp/8/4pP2/8/5N2/PPPP1PPP/RNBQKB1R b KQkq - 0 3",
-        "winrate": [
-            135793,
-            144287,
-            10380
-        ],
-        "games": 290460
-    },
-    {
-        "name": "Lasker Simul Special",
-        "eco": "A00",
-        "pgn": "1. g3 h5",
-        "fen": "rnbqkbnr/ppppppp1/8/7p/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            129814,
-            150161,
-            11730
-        ],
-        "games": 291705
-    },
-    {
-        "name": "Ware Defense",
-        "eco": "B00",
-        "pgn": "1. e4 a5",
-        "fen": "rnbqkbnr/1ppppppp/8/p7/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            153923,
-            137584,
-            11335
-        ],
-        "games": 302842
-    },
-    {
-        "name": "Clemenz Opening",
-        "eco": "A00",
-        "pgn": "1. h3",
-        "fen": "rnbqkbnr/pppppppp/8/8/8/7P/PPPPPPP1/RNBQKBNR b KQkq - 0 1",
-        "winrate": [
-            147689,
-            163582,
-            13526
-        ],
-        "games": 324797
-    },
-    {
-        "name": "Queen's Gambit Declined",
-        "eco": "D52",
-        "pgn": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6 5. Bg5 Nbd7 6. e3",
-        "fen": "r1bqkb1r/pp1n1ppp/2p1pn2/3p2B1/2PP4/2N1PN2/PP3PPP/R2QKB1R b KQkq - 0 6",
-        "winrate": [
-            172460,
-            158762,
-            20460
-        ],
-        "games": 351682
-    },
-    {
-        "name": "Blackmar-Diemer Gambit",
-        "eco": "D00",
-        "pgn": "1. d4 Nf6 2. Nc3 d5 3. e4",
-        "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR b KQkq - 0 3",
-        "winrate": [
-            183392,
-            163999,
-            13580
-        ],
-        "games": 360971
-    },
-    {
-        "name": "Catalan Opening",
-        "eco": "E00",
-        "pgn": "1. d4 Nf6 2. c4 e6 3. g3",
-        "fen": "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/6P1/PP2PP1P/RNBQKBNR b KQkq - 0 3",
-        "winrate": [
-            191175,
-            155142,
-            26779
-        ],
-        "games": 373096
-    },
-    {
-        "name": "Blumenfeld Countergambit",
-        "eco": "E10",
-        "pgn": "1. d4 Nf6 2. c4 e6 3. Nf3 c5",
-        "fen": "rnbqkb1r/pp1p1ppp/4pn2/2p5/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 4",
-        "winrate": [
-            189169,
-            173147,
-            21586
-        ],
-        "games": 383902
-    },
-    {
-        "name": "Barnes Defense",
-        "eco": "B00",
-        "pgn": "1. e4 f6",
-        "fen": "rnbqkbnr/ppppp1pp/5p2/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            208084,
-            170892,
-            13324
-        ],
-        "games": 392300
-    },
-    {
-        "name": "Slav Indian",
-        "eco": "A50",
-        "pgn": "1. d4 Nf6 2. c4 c6",
-        "fen": "rnbqkb1r/pp1ppppp/2p2n2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
-        "winrate": [
-            207081,
-            182672,
-            21163
-        ],
-        "games": 410916
-    },
-    {
-        "name": "Danish Gambit Accepted",
-        "eco": "C21",
-        "pgn": "1. e4 e5 2. d4 exd4 3. c3 dxc3 4. Bc4 cxb2 5. Bxb2",
-        "fen": "rnbqkbnr/pppp1ppp/8/8/2B1P3/8/PB3PPP/RN1QK1NR b KQkq - 0 5",
-        "winrate": [
-            294481,
-            207677,
-            16948
-        ],
-        "games": 519106
-    },
-    {
-        "name": "Ware Opening",
-        "eco": "A00",
-        "pgn": "1. a4",
-        "fen": "rnbqkbnr/pppppppp/8/8/P7/8/1PPPPPPP/RNBQKBNR b KQkq - 0 1",
-        "winrate": [
-            262140,
-            240749,
-            20282
-        ],
-        "games": 523171
-    },
-    {
-        "name": "Bogo-Indian Defense",
-        "eco": "E11",
-        "pgn": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+",
-        "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 2 4",
-        "winrate": [
-            261717,
-            235460,
-            35596
-        ],
-        "games": 532773
-    },
-    {
-        "name": "Tarrasch Defense",
-        "eco": "D32",
-        "pgn": "1. d4 d5 2. c4 e6 3. Nc3 c5",
-        "fen": "rnbqkbnr/pp3ppp/4p3/2pp4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4",
-        "winrate": [
-            262611,
-            252331,
-            27960
-        ],
-        "games": 542902
-    },
-    {
-        "name": "Czech Defense",
-        "eco": "B07",
-        "pgn": "1. e4 d6 2. d4 Nf6 3. Nc3 c6",
-        "fen": "rnbqkb1r/pp2pppp/2pp1n2/8/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4",
-        "winrate": [
-            269117,
-            253155,
-            25014
-        ],
-        "games": 547286
-    },
-    {
-        "name": "Queen's Indian Defense",
-        "eco": "E12",
-        "pgn": "1. d4 Nf6 2. c4 e6 3. Nf3 b6",
-        "fen": "rnbqkb1r/p1pp1ppp/1p2pn2/8/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 4",
-        "winrate": [
-            266739,
-            253221,
-            38929
-        ],
-        "games": 558889
-    },
-    {
-        "name": "Benko Gambit Accepted",
-        "eco": "A57",
-        "pgn": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6",
-        "fen": "rnbqkb1r/3ppppp/p4n2/1PpP4/8/8/PP2PPPP/RNBQKBNR w KQkq - 0 5",
-        "winrate": [
-            261739,
-            273479,
-            34968
-        ],
-        "games": 570186
-    },
-    {
-        "name": "Vienna Gambit, with Max Lange Defense",
-        "eco": "C25",
-        "pgn": "1. e4 e5 2. Nc3 Nc6 3. f4",
-        "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4PP2/2N5/PPPP2PP/R1BQKBNR b KQkq - 0 3",
-        "winrate": [
-            309854,
-            251810,
-            21631
-        ],
-        "games": 583295
-    },
-    {
-        "name": "Richter-Veresov Attack",
-        "eco": "D01",
-        "pgn": "1. d4 Nf6 2. Nc3 d5 3. Bg5",
-        "fen": "rnbqkb1r/ppp1pppp/5n2/3p2B1/3P4/2N5/PPP1PPPP/R2QKBNR b KQkq - 1 3",
-        "winrate": [
-            298345,
-            276071,
-            32049
-        ],
-        "games": 606465
-    },
-    {
-        "name": "K\u00c3\u00a1das Opening",
-        "eco": "A00",
-        "pgn": "1. h4",
-        "fen": "rnbqkbnr/pppppppp/8/8/7P/8/PPPPPPP1/RNBQKBNR b KQkq - 0 1",
-        "winrate": [
-            308078,
-            305483,
-            24064
-        ],
-        "games": 637625
-    },
-    {
-        "name": "Anderssen's Opening",
-        "eco": "A00",
-        "pgn": "1. a3",
-        "fen": "rnbqkbnr/pppppppp/8/8/8/P7/1PPPPPPP/RNBQKBNR b KQkq - 0 1",
-        "winrate": [
-            322486,
-            311144,
-            30982
-        ],
-        "games": 664612
-    },
-    {
-        "name": "Englund Gambit Complex Declined",
-        "eco": "A40",
-        "pgn": "1. d4 e5 2. d5",
-        "fen": "rnbqkbnr/pppp1ppp/8/3Pp3/8/8/PPP1PPPP/RNBQKBNR b KQkq - 0 2",
-        "winrate": [
-            316007,
-            328544,
-            22569
-        ],
-        "games": 667120
-    },
-    {
-        "name": "Duras Gambit",
-        "eco": "B00",
-        "pgn": "1. e4 f5",
-        "fen": "rnbqkbnr/ppppp1pp/8/5p2/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            420506,
-            378665,
-            26295
-        ],
-        "games": 825466
-    },
-    {
-        "name": "Latvian Gambit",
-        "eco": "C40",
-        "pgn": "1. e4 e5 2. Nf3 f5",
-        "fen": "rnbqkbnr/pppp2pp/8/4pp2/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
-        "winrate": [
-            433985,
-            435269,
-            31220
-        ],
-        "games": 900474
-    },
-    {
-        "name": "Yusupov-Rubinstein System",
-        "eco": "A46",
-        "pgn": "1. d4 Nf6 2. Nf3 e6 3. e3",
-        "fen": "rnbqkb1r/pppp1ppp/4pn2/8/3P4/4PN2/PPP2PPP/RNBQKB1R b KQkq - 0 3",
-        "winrate": [
-            456879,
-            416969,
-            46595
-        ],
-        "games": 920443
-    },
-    {
-        "name": "St. George Defense",
-        "eco": "B00",
-        "pgn": "1. e4 a6",
-        "fen": "rnbqkbnr/1ppppppp/p7/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            464424,
-            434688,
-            37186
-        ],
-        "games": 936298
-    },
-    {
-        "name": "Barnes Opening",
-        "eco": "A00",
-        "pgn": "1. f3",
-        "fen": "rnbqkbnr/pppppppp/8/8/8/5P2/PPPPP1PP/RNBQKBNR b KQkq - 0 1",
-        "winrate": [
-            447187,
-            486318,
-            35729
-        ],
-        "games": 969234
-    },
-    {
-        "name": "Benko Gambit",
-        "eco": "A57",
-        "pgn": "1. d4 Nf6 2. c4 c5 3. d5 b5",
-        "fen": "rnbqkb1r/p2ppppp/5n2/1ppP4/2P5/8/PP2PPPP/RNBQKBNR w KQkq - 0 4",
-        "winrate": [
-            451752,
-            496582,
-            56158
-        ],
-        "games": 1004492
-    },
-    {
-        "name": "London System",
-        "eco": "A48",
-        "pgn": "1. d4 Nf6 2. Nf3 g6 3. Bf4",
-        "fen": "rnbqkb1r/pppppp1p/5np1/8/3P1B2/5N2/PPP1PPPP/RN1QKB1R b KQkq - 1 3",
-        "winrate": [
-            483121,
-            473446,
-            57275
-        ],
-        "games": 1013842
-    },
-    {
-        "name": "Rapport-Jobava System",
-        "eco": "D01",
-        "pgn": "1. d4 d5 2. Nc3 Nf6 3. Bf4",
-        "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P1B2/2N5/PPP1PPPP/R2QKBNR b KQkq - 3 3",
-        "winrate": [
-            529894,
-            467416,
-            51034
-        ],
-        "games": 1048344
-    },
-    {
-        "name": "King's Indian Attack",
-        "eco": "A05",
-        "pgn": "1. Nf3 Nf6 2. g3 d5",
-        "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/8/5NP1/PPPPPP1P/RNBQKB1R w KQkq - 0 3",
-        "winrate": [
-            574663,
-            470049,
-            69589
-        ],
-        "games": 1114301
-    },
-    {
-        "name": "Modern Defense",
-        "eco": "A41",
-        "pgn": "1. d4 g6 2. c4 Bg7 3. Nc3 d6",
-        "fen": "rnbqk1nr/ppp1ppbp/3p2p1/8/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4",
-        "winrate": [
-            582204,
-            577428,
-            55908
-        ],
-        "games": 1215540
-    },
-    {
-        "name": "Mikenas Defense",
-        "eco": "A40",
-        "pgn": "1. d4 Nc6",
-        "fen": "r1bqkbnr/pppppppp/2n5/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 1 2",
-        "winrate": [
-            676468,
-            627351,
-            55462
-        ],
-        "games": 1359281
-    },
-    {
-        "name": "R\u00c3\u00a9ti Opening",
-        "eco": "A09",
-        "pgn": "1. Nf3 d5 2. c4",
-        "fen": "rnbqkbnr/ppp1pppp/8/3p4/2P5/5N2/PP1PPPPP/RNBQKB1R b KQkq - 0 2",
-        "winrate": [
-            779521,
-            607481,
-            77086
-        ],
-        "games": 1464088
-    },
-    {
-        "name": "Gr\u00c3\u00bcnfeld Defense",
-        "eco": "D80",
-        "pgn": "1. d4 Nf6 2. c4 g6 3. Nc3 d5",
-        "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4",
-        "winrate": [
-            736168,
-            757038,
-            103658
-        ],
-        "games": 1596864
-    },
-    {
-        "name": "Ponziani Opening",
-        "eco": "C44",
-        "pgn": "1. e4 e5 2. Nf3 Nc6 3. c3",
-        "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/2P2N2/PP1P1PPP/RNBQKB1R b KQkq - 0 3",
-        "winrate": [
-            796379,
-            744287,
-            66784
-        ],
-        "games": 1607450
-    },
-    {
-        "name": "Elephant Gambit",
-        "eco": "C40",
-        "pgn": "1. e4 e5 2. Nf3 d5",
-        "fen": "rnbqkbnr/ppp2ppp/8/3pp3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
-        "winrate": [
-            814323,
-            852975,
-            68213
-        ],
-        "games": 1735511
-    },
-    {
-        "name": "Grob Opening",
-        "eco": "A00",
-        "pgn": "1. g4",
-        "fen": "rnbqkbnr/pppppppp/8/8/6P1/8/PPPPPP1P/RNBQKBNR b KQkq - 0 1",
-        "winrate": [
-            853058,
-            826141,
-            62008
-        ],
-        "games": 1741207
-    },
-    {
-        "name": "Old Indian Defense",
-        "eco": "A53",
-        "pgn": "1. d4 Nf6 2. c4 d6",
-        "fen": "rnbqkb1r/ppp1pppp/3p1n2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
-        "winrate": [
-            931357,
-            909877,
-            90173
-        ],
-        "games": 1931407
-    },
-    {
-        "name": "Trompowsky Attack",
-        "eco": "A45",
-        "pgn": "1. d4 Nf6 2. Bg5",
-        "fen": "rnbqkb1r/pppppppp/5n2/6B1/3P4/8/PPP1PPPP/RN1QKBNR b KQkq - 2 2",
-        "winrate": [
-            1044159,
-            961942,
-            116876
-        ],
-        "games": 2122977
-    },
-    {
-        "name": "Danish Gambit",
-        "eco": "C21",
-        "pgn": "1. e4 e5 2. d4 exd4 3. c3",
-        "fen": "rnbqkbnr/pppp1ppp/8/8/3pP3/2P5/PP3PPP/RNBQKBNR b KQkq - 0 3",
-        "winrate": [
-            1209968,
-            949272,
-            82202
-        ],
-        "games": 2241442
-    },
-    {
-        "name": "Semi-Slav Defense",
-        "eco": "D43",
-        "pgn": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6",
-        "fen": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5",
-        "winrate": [
-            1184087,
-            1001175,
-            122948
-        ],
-        "games": 2308210
-    },
-    {
-        "name": "Saragossa Opening",
-        "eco": "A00",
-        "pgn": "1. c3",
-        "fen": "rnbqkbnr/pppppppp/8/8/8/2P5/PP1PPPPP/RNBQKBNR b KQkq - 0 1",
-        "winrate": [
-            1187556,
-            1146124,
-            92497
-        ],
-        "games": 2426177
-    },
-    {
-        "name": "Benoni Defense",
-        "eco": "A56",
-        "pgn": "1. d4 Nf6 2. c4 c5",
-        "fen": "rnbqkb1r/pp1ppppp/5n2/2p5/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
-        "winrate": [
-            1171652,
-            1253280,
-            139704
-        ],
-        "games": 2564636
-    },
-    {
-        "name": "Nimzo-Indian Defense",
-        "eco": "E20",
-        "pgn": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4",
-        "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4",
-        "winrate": [
-            1347900,
-            1303877,
-            155907
-        ],
-        "games": 2807684
-    },
-    {
-        "name": "Polish Opening",
-        "eco": "A00",
-        "pgn": "1. b4",
-        "fen": "rnbqkbnr/pppppppp/8/8/1P6/8/P1PPPPPP/RNBQKBNR b KQkq - 0 1",
-        "winrate": [
-            1587906,
-            1411696,
-            130698
-        ],
-        "games": 3130300
-    },
-    {
-        "name": "English Defense",
-        "eco": "A40",
-        "pgn": "1. d4 b6",
-        "fen": "rnbqkbnr/p1pppppp/1p6/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            1806412,
-            1621131,
-            139718
-        ],
-        "games": 3567261
-    },
-    {
-        "name": "Dutch Defense",
-        "eco": "A80",
-        "pgn": "1. d4 f5",
-        "fen": "rnbqkbnr/ppppp1pp/8/5p2/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            1856058,
-            1705540,
-            175696
-        ],
-        "games": 3737294
-    },
-    {
-        "name": "East Indian Defense",
-        "eco": "A48",
-        "pgn": "1. d4 Nf6 2. Nf3 g6",
-        "fen": "rnbqkb1r/pppppp1p/5np1/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3",
-        "winrate": [
-            1963985,
-            1867790,
-            245650
-        ],
-        "games": 4077425
-    },
-    {
-        "name": "King's Gambit Accepted",
-        "eco": "C33",
-        "pgn": "1. e4 e5 2. f4 exf4",
-        "fen": "rnbqkbnr/pppp1ppp/8/8/4Pp2/8/PPPP2PP/RNBQKBNR w KQkq - 0 3",
-        "winrate": [
-            2215563,
-            1896334,
-            145133
-        ],
-        "games": 4257030
-    },
-    {
-        "name": "Four Knights Game",
-        "eco": "C47",
-        "pgn": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6",
-        "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 4 4",
-        "winrate": [
-            2211981,
-            2049249,
-            234625
-        ],
-        "games": 4495855
-    },
-    {
-        "name": "Queen's Gambit Accepted",
-        "eco": "D20",
-        "pgn": "1. d4 d5 2. c4 dxc4",
-        "fen": "rnbqkbnr/ppp1pppp/8/8/2pP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
-        "winrate": [
-            2713901,
-            2062541,
-            225157
-        ],
-        "games": 5001599
-    },
-    {
-        "name": "Van Geet Opening",
-        "eco": "A00",
-        "pgn": "1. Nc3",
-        "fen": "rnbqkbnr/pppppppp/8/8/8/2N5/PPPPPPPP/R1BQKBNR b KQkq - 1 1",
-        "winrate": [
-            2582541,
-            2336987,
-            197506
-        ],
-        "games": 5117034
-    },
-    {
-        "name": "Three Knights Opening",
-        "eco": "C46",
-        "pgn": "1. e4 e5 2. Nf3 Nc6 3. Nc3",
-        "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R b KQkq - 3 3",
-        "winrate": [
-            2551579,
-            2345428,
-            249020
-        ],
-        "games": 5146027
-    },
-    {
-        "name": "Center Game Accepted",
-        "eco": "C21",
-        "pgn": "1. e4 e5 2. d4 exd4",
-        "fen": "rnbqkbnr/pppp1ppp/8/8/3pP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
-        "winrate": [
-            2702573,
-            2268917,
-            197116
-        ],
-        "games": 5168606
-    },
-    {
-        "name": "Nimzowitsch Defense",
-        "eco": "B00",
-        "pgn": "1. e4 Nc6",
-        "fen": "r1bqkbnr/pppppppp/2n5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2",
-        "winrate": [
-            2588520,
-            2521587,
-            219616
-        ],
-        "games": 5329723
-    },
-    {
-        "name": "King's Indian Defense",
-        "eco": "E61",
-        "pgn": "1. d4 Nf6 2. c4 g6 3. Nc3",
-        "fen": "rnbqkb1r/pppppp1p/5np1/8/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq - 1 3",
-        "winrate": [
-            2722199,
-            2675967,
-            312991
-        ],
-        "games": 5711157
-    },
-    {
-        "name": "Mieses Opening",
-        "eco": "A00",
-        "pgn": "1. d3",
-        "fen": "rnbqkbnr/pppppppp/8/8/8/3P4/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
-        "winrate": [
-            3525358,
-            3494838,
-            279473
-        ],
-        "games": 7299669
-    },
-    {
-        "name": "Bird Opening",
-        "eco": "A02",
-        "pgn": "1. f4",
-        "fen": "rnbqkbnr/pppppppp/8/8/5P2/8/PPPPP1PP/RNBQKBNR b KQkq - 0 1",
-        "winrate": [
-            3698341,
-            3437176,
-            310027
-        ],
-        "games": 7445544
-    },
-    {
-        "name": "Owen Defense",
-        "eco": "B00",
-        "pgn": "1. e4 b6",
-        "fen": "rnbqkbnr/p1pppppp/1p6/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            3784437,
-            3425056,
-            284065
-        ],
-        "games": 7493558
-    },
-    {
-        "name": "Center Game",
-        "eco": "C20",
-        "pgn": "1. e4 e5 2. d4",
-        "fen": "rnbqkbnr/pppp1ppp/8/4p3/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2",
-        "winrate": [
-            3957725,
-            3274757,
-            283519
-        ],
-        "games": 7516001
-    },
-    {
-        "name": "Vienna Game",
-        "eco": "C25",
-        "pgn": "1. e4 e5 2. Nc3",
-        "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq - 1 2",
-        "winrate": [
-            4096897,
-            3485720,
-            329428
-        ],
-        "games": 7912045
-    },
-    {
-        "name": "Englund Gambit",
-        "eco": "A40",
-        "pgn": "1. d4 e5",
-        "fen": "rnbqkbnr/pppp1ppp/8/4p3/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            4129163,
-            3927074,
-            312938
-        ],
-        "games": 8369175
-    },
-    {
-        "name": "Russian Game",
-        "eco": "C42",
-        "pgn": "1. e4 e5 2. Nf3 Nf6",
-        "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
-        "winrate": [
-            4374119,
-            4060055,
-            413826
-        ],
-        "games": 8848000
-    },
-    {
-        "name": "Alekhine Defense",
-        "eco": "B02",
-        "pgn": "1. e4 Nf6",
-        "fen": "rnbqkb1r/pppppppp/5n2/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2",
-        "winrate": [
-            4347357,
-            4454110,
-            407230
-        ],
-        "games": 9208697
-    },
-    {
-        "name": "Scotch Game",
-        "eco": "C44",
-        "pgn": "1. e4 e5 2. Nf3 Nc6 3. d4",
-        "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3",
-        "winrate": [
-            4867248,
-            4026564,
-            451255
-        ],
-        "games": 9345067
-    },
-    {
-        "name": "Slav Defense",
-        "eco": "D10",
-        "pgn": "1. d4 d5 2. c4 c6",
-        "fen": "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
-        "winrate": [
-            4833714,
-            4220269,
-            501517
-        ],
-        "games": 9555500
-    },
-    {
-        "name": "King's Gambit",
-        "eco": "C30",
-        "pgn": "1. e4 e5 2. f4",
-        "fen": "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2",
-        "winrate": [
-            5077781,
-            4449782,
-            339996
-        ],
-        "games": 9867559
-    },
-    {
-        "name": "Bishop's Opening",
-        "eco": "C23",
-        "pgn": "1. e4 e5 2. Bc4",
-        "fen": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
-        "winrate": [
-            5752056,
-            5190653,
-            462541
-        ],
-        "games": 11405250
-    },
-    {
-        "name": "Philidor Defense",
-        "eco": "C41",
-        "pgn": "1. e4 e5 2. Nf3 d6",
-        "fen": "rnbqkbnr/ppp2ppp/3p4/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
-        "winrate": [
-            6006277,
-            5077313,
-            526515
-        ],
-        "games": 11610105
-    },
-    {
-        "name": "Nimzo-Larsen Attack",
-        "eco": "A01",
-        "pgn": "1. b3",
-        "fen": "rnbqkbnr/pppppppp/8/8/8/1P6/P1PPPPPP/RNBQKBNR b KQkq - 0 1",
-        "winrate": [
-            6601972,
-            5957822,
-            553794
-        ],
-        "games": 13113588
-    },
-    {
-        "name": "Ruy Lopez",
-        "eco": "C60",
-        "pgn": "1. e4 e5 2. Nf3 Nc6 3. Bb5",
-        "fen": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
-        "winrate": [
-            6786314,
-            5883105,
-            675793
-        ],
-        "games": 13345212
-    },
-    {
-        "name": "Van't Kruijs Opening",
-        "eco": "A00",
-        "pgn": "1. e3",
-        "fen": "rnbqkbnr/pppppppp/8/8/8/4P3/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
-        "winrate": [
-            6525180,
-            6695760,
-            513572
-        ],
-        "games": 13734512
-    },
-    {
-        "name": "Hungarian Opening",
-        "eco": "A00",
-        "pgn": "1. g3",
-        "fen": "rnbqkbnr/pppppppp/8/8/8/6P1/PPPPPP1P/RNBQKBNR b KQkq - 0 1",
-        "winrate": [
-            7193712,
-            6533618,
-            621146
-        ],
-        "games": 14348476
-    },
-    {
-        "name": "Pirc Defense",
-        "eco": "B00",
-        "pgn": "1. e4 d6",
-        "fen": "rnbqkbnr/ppp1pppp/3p4/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            7735874,
-            7441820,
-            686430
-        ],
-        "games": 15864124
-    },
-    {
-        "name": "Horwitz Defense",
-        "eco": "A40",
-        "pgn": "1. d4 e6",
-        "fen": "rnbqkbnr/pppp1ppp/4p3/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            9277916,
-            8017129,
-            792177
-        ],
-        "games": 18087222
-    },
-    {
-        "name": "Italian Game",
-        "eco": "C50",
-        "pgn": "1. e4 e5 2. Nf3 Nc6 3. Bc4",
-        "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
-        "winrate": [
-            11142198,
-            10167336,
-            961459
-        ],
-        "games": 22270993
-    },
-    {
-        "name": "English Opening",
-        "eco": "A10",
-        "pgn": "1. c4",
-        "fen": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq - 0 1",
-        "winrate": [
-            13977379,
-            12461157,
-            1369105
-        ],
-        "games": 27807641
-    },
-    {
-        "name": "Queen's Gambit",
-        "eco": "D06",
-        "pgn": "1. d4 d5 2. c4",
-        "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
-        "winrate": [
-            15024787,
-            12534749,
-            1428534
-        ],
-        "games": 28988070
-    },
-    {
-        "name": "Caro-Kann Defense",
-        "eco": "B10",
-        "pgn": "1. e4 c6",
-        "fen": "rnbqkbnr/pp1ppppp/2p5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            14542540,
-            14640157,
-            1506857
-        ],
-        "games": 30689554
-    },
-    {
-        "name": "Zukertort Opening",
-        "eco": "A04",
-        "pgn": "1. Nf3",
-        "fen": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1",
-        "winrate": [
-            16989598,
-            14476589,
-            1679026
-        ],
-        "games": 33145213
-    },
-    {
-        "name": "Scandinavian Defense",
-        "eco": "B01",
-        "pgn": "1. e4 d5",
-        "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            17736021,
-            17325364,
-            1595398
-        ],
-        "games": 36656783
-    },
-    {
-        "name": "French Defense",
-        "eco": "C00",
-        "pgn": "1. e4 e6",
-        "fen": "rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            21099964,
-            20707094,
-            2005870
-        ],
-        "games": 43812928
-    },
-    {
-        "name": "Indian Defense",
-        "eco": "A45",
-        "pgn": "1. d4 Nf6",
-        "fen": "rnbqkb1r/pppppppp/5n2/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 1 2",
-        "winrate": [
-            22582763,
-            21543320,
-            2512198
-        ],
-        "games": 46638281
-    },
-    {
-        "name": "King's Knight Opening",
-        "eco": "C40",
-        "pgn": "1. e4 e5 2. Nf3",
-        "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
-        "winrate": [
-            38138170,
-            33790728,
-            3453783
-        ],
-        "games": 75382681
-    },
-    {
-        "name": "Sicilian Defense",
-        "eco": "B20",
-        "pgn": "1. e4 c5",
-        "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            41976311,
-            41356329,
-            4058592
-        ],
-        "games": 87391232
-    },
-    {
-        "name": "King's Pawn Game",
-        "eco": "C20",
-        "pgn": "1. e4 e5",
-        "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-        "winrate": [
-            59980439,
-            53099906,
-            5132791
-        ],
-        "games": 118213136
+        "games": 372903233
     },
     {
         "name": "Queen's Pawn Game",
@@ -1572,15 +24,1563 @@
         "games": 184453898
     },
     {
-        "name": "King's Pawn",
-        "eco": "B00",
-        "pgn": "1. e4",
-        "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+        "name": "King's Pawn Game",
+        "eco": "C20",
+        "pgn": "1. e4 e5",
+        "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
         "winrate": [
-            182613212,
-            173636682,
-            16653339
+            59980439,
+            53099906,
+            5132791
         ],
-        "games": 372903233
+        "games": 118213136
+    },
+    {
+        "name": "Sicilian Defense",
+        "eco": "B20",
+        "pgn": "1. e4 c5",
+        "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "winrate": [
+            41976311,
+            41356329,
+            4058592
+        ],
+        "games": 87391232
+    },
+    {
+        "name": "King's Knight Opening",
+        "eco": "C40",
+        "pgn": "1. e4 e5 2. Nf3",
+        "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+        "winrate": [
+            38138170,
+            33790728,
+            3453783
+        ],
+        "games": 75382681
+    },
+    {
+        "name": "Indian Defense",
+        "eco": "A45",
+        "pgn": "1. d4 Nf6",
+        "fen": "rnbqkb1r/pppppppp/5n2/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 1 2",
+        "winrate": [
+            22582763,
+            21543320,
+            2512198
+        ],
+        "games": 46638281
+    },
+    {
+        "name": "French Defense",
+        "eco": "C00",
+        "pgn": "1. e4 e6",
+        "fen": "rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "winrate": [
+            21099964,
+            20707094,
+            2005870
+        ],
+        "games": 43812928
+    },
+    {
+        "name": "Scandinavian Defense",
+        "eco": "B01",
+        "pgn": "1. e4 d5",
+        "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "winrate": [
+            17736021,
+            17325364,
+            1595398
+        ],
+        "games": 36656783
+    },
+    {
+        "name": "Zukertort Opening",
+        "eco": "A04",
+        "pgn": "1. Nf3",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1",
+        "winrate": [
+            16989598,
+            14476589,
+            1679026
+        ],
+        "games": 33145213
+    },
+    {
+        "name": "Caro-Kann Defense",
+        "eco": "B10",
+        "pgn": "1. e4 c6",
+        "fen": "rnbqkbnr/pp1ppppp/2p5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "winrate": [
+            14542540,
+            14640157,
+            1506857
+        ],
+        "games": 30689554
+    },
+    {
+        "name": "Queen's Gambit",
+        "eco": "D06",
+        "pgn": "1. d4 d5 2. c4",
+        "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
+        "winrate": [
+            15024787,
+            12534749,
+            1428534
+        ],
+        "games": 28988070
+    },
+    {
+        "name": "English Opening",
+        "eco": "A10",
+        "pgn": "1. c4",
+        "fen": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq - 0 1",
+        "winrate": [
+            13977379,
+            12461157,
+            1369105
+        ],
+        "games": 27807641
+    },
+    {
+        "name": "Italian Game",
+        "eco": "C50",
+        "pgn": "1. e4 e5 2. Nf3 Nc6 3. Bc4",
+        "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+        "winrate": [
+            11142198,
+            10167336,
+            961459
+        ],
+        "games": 22270993
+    },
+    {
+        "name": "Horwitz Defense",
+        "eco": "A40",
+        "pgn": "1. d4 e6",
+        "fen": "rnbqkbnr/pppp1ppp/4p3/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+        "winrate": [
+            9277916,
+            8017129,
+            792177
+        ],
+        "games": 18087222
+    },
+    {
+        "name": "Pirc Defense",
+        "eco": "B00",
+        "pgn": "1. e4 d6",
+        "fen": "rnbqkbnr/ppp1pppp/3p4/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "winrate": [
+            7735874,
+            7441820,
+            686430
+        ],
+        "games": 15864124
+    },
+    {
+        "name": "Hungarian Opening",
+        "eco": "A00",
+        "pgn": "1. g3",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/6P1/PPPPPP1P/RNBQKBNR b KQkq - 0 1",
+        "winrate": [
+            7193712,
+            6533618,
+            621146
+        ],
+        "games": 14348476
+    },
+    {
+        "name": "Van't Kruijs Opening",
+        "eco": "A00",
+        "pgn": "1. e3",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/4P3/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+        "winrate": [
+            6525180,
+            6695760,
+            513572
+        ],
+        "games": 13734512
+    },
+    {
+        "name": "Ruy Lopez",
+        "eco": "C60",
+        "pgn": "1. e4 e5 2. Nf3 Nc6 3. Bb5",
+        "fen": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+        "winrate": [
+            6786314,
+            5883105,
+            675793
+        ],
+        "games": 13345212
+    },
+    {
+        "name": "Nimzo-Larsen Attack",
+        "eco": "A01",
+        "pgn": "1. b3",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/1P6/P1PPPPPP/RNBQKBNR b KQkq - 0 1",
+        "winrate": [
+            6601972,
+            5957822,
+            553794
+        ],
+        "games": 13113588
+    },
+    {
+        "name": "Philidor Defense",
+        "eco": "C41",
+        "pgn": "1. e4 e5 2. Nf3 d6",
+        "fen": "rnbqkbnr/ppp2ppp/3p4/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
+        "winrate": [
+            6006277,
+            5077313,
+            526515
+        ],
+        "games": 11610105
+    },
+    {
+        "name": "Bishop's Opening",
+        "eco": "C23",
+        "pgn": "1. e4 e5 2. Bc4",
+        "fen": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
+        "winrate": [
+            5752056,
+            5190653,
+            462541
+        ],
+        "games": 11405250
+    },
+    {
+        "name": "King's Gambit",
+        "eco": "C30",
+        "pgn": "1. e4 e5 2. f4",
+        "fen": "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2",
+        "winrate": [
+            5077781,
+            4449782,
+            339996
+        ],
+        "games": 9867559
+    },
+    {
+        "name": "Slav Defense",
+        "eco": "D10",
+        "pgn": "1. d4 d5 2. c4 c6",
+        "fen": "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+        "winrate": [
+            4833714,
+            4220269,
+            501517
+        ],
+        "games": 9555500
+    },
+    {
+        "name": "Scotch Game",
+        "eco": "C44",
+        "pgn": "1. e4 e5 2. Nf3 Nc6 3. d4",
+        "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3",
+        "winrate": [
+            4867248,
+            4026564,
+            451255
+        ],
+        "games": 9345067
+    },
+    {
+        "name": "Alekhine Defense",
+        "eco": "B02",
+        "pgn": "1. e4 Nf6",
+        "fen": "rnbqkb1r/pppppppp/5n2/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2",
+        "winrate": [
+            4347357,
+            4454110,
+            407230
+        ],
+        "games": 9208697
+    },
+    {
+        "name": "Russian Game",
+        "eco": "C42",
+        "pgn": "1. e4 e5 2. Nf3 Nf6",
+        "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "winrate": [
+            4374119,
+            4060055,
+            413826
+        ],
+        "games": 8848000
+    },
+    {
+        "name": "Englund Gambit",
+        "eco": "A40",
+        "pgn": "1. d4 e5",
+        "fen": "rnbqkbnr/pppp1ppp/8/4p3/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+        "winrate": [
+            4129163,
+            3927074,
+            312938
+        ],
+        "games": 8369175
+    },
+    {
+        "name": "Vienna Game",
+        "eco": "C25",
+        "pgn": "1. e4 e5 2. Nc3",
+        "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq - 1 2",
+        "winrate": [
+            4096897,
+            3485720,
+            329428
+        ],
+        "games": 7912045
+    },
+    {
+        "name": "Center Game",
+        "eco": "C20",
+        "pgn": "1. e4 e5 2. d4",
+        "fen": "rnbqkbnr/pppp1ppp/8/4p3/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2",
+        "winrate": [
+            3957725,
+            3274757,
+            283519
+        ],
+        "games": 7516001
+    },
+    {
+        "name": "Owen Defense",
+        "eco": "B00",
+        "pgn": "1. e4 b6",
+        "fen": "rnbqkbnr/p1pppppp/1p6/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "winrate": [
+            3784437,
+            3425056,
+            284065
+        ],
+        "games": 7493558
+    },
+    {
+        "name": "Bird Opening",
+        "eco": "A02",
+        "pgn": "1. f4",
+        "fen": "rnbqkbnr/pppppppp/8/8/5P2/8/PPPPP1PP/RNBQKBNR b KQkq - 0 1",
+        "winrate": [
+            3698341,
+            3437176,
+            310027
+        ],
+        "games": 7445544
+    },
+    {
+        "name": "Mieses Opening",
+        "eco": "A00",
+        "pgn": "1. d3",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/3P4/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+        "winrate": [
+            3525358,
+            3494838,
+            279473
+        ],
+        "games": 7299669
+    },
+    {
+        "name": "King's Indian Defense",
+        "eco": "E61",
+        "pgn": "1. d4 Nf6 2. c4 g6 3. Nc3",
+        "fen": "rnbqkb1r/pppppp1p/5np1/8/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq - 1 3",
+        "winrate": [
+            2722199,
+            2675967,
+            312991
+        ],
+        "games": 5711157
+    },
+    {
+        "name": "Nimzowitsch Defense",
+        "eco": "B00",
+        "pgn": "1. e4 Nc6",
+        "fen": "r1bqkbnr/pppppppp/2n5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2",
+        "winrate": [
+            2588520,
+            2521587,
+            219616
+        ],
+        "games": 5329723
+    },
+    {
+        "name": "Center Game Accepted",
+        "eco": "C21",
+        "pgn": "1. e4 e5 2. d4 exd4",
+        "fen": "rnbqkbnr/pppp1ppp/8/8/3pP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
+        "winrate": [
+            2702573,
+            2268917,
+            197116
+        ],
+        "games": 5168606
+    },
+    {
+        "name": "Three Knights Opening",
+        "eco": "C46",
+        "pgn": "1. e4 e5 2. Nf3 Nc6 3. Nc3",
+        "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R b KQkq - 3 3",
+        "winrate": [
+            2551579,
+            2345428,
+            249020
+        ],
+        "games": 5146027
+    },
+    {
+        "name": "Van Geet Opening",
+        "eco": "A00",
+        "pgn": "1. Nc3",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/2N5/PPPPPPPP/R1BQKBNR b KQkq - 1 1",
+        "winrate": [
+            2582541,
+            2336987,
+            197506
+        ],
+        "games": 5117034
+    },
+    {
+        "name": "Queen's Gambit Accepted",
+        "eco": "D20",
+        "pgn": "1. d4 d5 2. c4 dxc4",
+        "fen": "rnbqkbnr/ppp1pppp/8/8/2pP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+        "winrate": [
+            2713901,
+            2062541,
+            225157
+        ],
+        "games": 5001599
+    },
+    {
+        "name": "Four Knights Game",
+        "eco": "C47",
+        "pgn": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6",
+        "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 4 4",
+        "winrate": [
+            2211981,
+            2049249,
+            234625
+        ],
+        "games": 4495855
+    },
+    {
+        "name": "King's Gambit Accepted",
+        "eco": "C33",
+        "pgn": "1. e4 e5 2. f4 exf4",
+        "fen": "rnbqkbnr/pppp1ppp/8/8/4Pp2/8/PPPP2PP/RNBQKBNR w KQkq - 0 3",
+        "winrate": [
+            2215563,
+            1896334,
+            145133
+        ],
+        "games": 4257030
+    },
+    {
+        "name": "East Indian Defense",
+        "eco": "A48",
+        "pgn": "1. d4 Nf6 2. Nf3 g6",
+        "fen": "rnbqkb1r/pppppp1p/5np1/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3",
+        "winrate": [
+            1963985,
+            1867790,
+            245650
+        ],
+        "games": 4077425
+    },
+    {
+        "name": "Dutch Defense",
+        "eco": "A80",
+        "pgn": "1. d4 f5",
+        "fen": "rnbqkbnr/ppppp1pp/8/5p2/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+        "winrate": [
+            1856058,
+            1705540,
+            175696
+        ],
+        "games": 3737294
+    },
+    {
+        "name": "English Defense",
+        "eco": "A40",
+        "pgn": "1. d4 b6",
+        "fen": "rnbqkbnr/p1pppppp/1p6/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+        "winrate": [
+            1806412,
+            1621131,
+            139718
+        ],
+        "games": 3567261
+    },
+    {
+        "name": "Polish Opening",
+        "eco": "A00",
+        "pgn": "1. b4",
+        "fen": "rnbqkbnr/pppppppp/8/8/1P6/8/P1PPPPPP/RNBQKBNR b KQkq - 0 1",
+        "winrate": [
+            1587906,
+            1411696,
+            130698
+        ],
+        "games": 3130300
+    },
+    {
+        "name": "Nimzo-Indian Defense",
+        "eco": "E20",
+        "pgn": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4",
+        "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4",
+        "winrate": [
+            1347900,
+            1303877,
+            155907
+        ],
+        "games": 2807684
+    },
+    {
+        "name": "Benoni Defense",
+        "eco": "A56",
+        "pgn": "1. d4 Nf6 2. c4 c5",
+        "fen": "rnbqkb1r/pp1ppppp/5n2/2p5/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+        "winrate": [
+            1171652,
+            1253280,
+            139704
+        ],
+        "games": 2564636
+    },
+    {
+        "name": "Saragossa Opening",
+        "eco": "A00",
+        "pgn": "1. c3",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/2P5/PP1PPPPP/RNBQKBNR b KQkq - 0 1",
+        "winrate": [
+            1187556,
+            1146124,
+            92497
+        ],
+        "games": 2426177
+    },
+    {
+        "name": "Semi-Slav Defense",
+        "eco": "D43",
+        "pgn": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6",
+        "fen": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5",
+        "winrate": [
+            1184087,
+            1001175,
+            122948
+        ],
+        "games": 2308210
+    },
+    {
+        "name": "Danish Gambit",
+        "eco": "C21",
+        "pgn": "1. e4 e5 2. d4 exd4 3. c3",
+        "fen": "rnbqkbnr/pppp1ppp/8/8/3pP3/2P5/PP3PPP/RNBQKBNR b KQkq - 0 3",
+        "winrate": [
+            1209968,
+            949272,
+            82202
+        ],
+        "games": 2241442
+    },
+    {
+        "name": "Trompowsky Attack",
+        "eco": "A45",
+        "pgn": "1. d4 Nf6 2. Bg5",
+        "fen": "rnbqkb1r/pppppppp/5n2/6B1/3P4/8/PPP1PPPP/RN1QKBNR b KQkq - 2 2",
+        "winrate": [
+            1044159,
+            961942,
+            116876
+        ],
+        "games": 2122977
+    },
+    {
+        "name": "Old Indian Defense",
+        "eco": "A53",
+        "pgn": "1. d4 Nf6 2. c4 d6",
+        "fen": "rnbqkb1r/ppp1pppp/3p1n2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+        "winrate": [
+            931357,
+            909877,
+            90173
+        ],
+        "games": 1931407
+    },
+    {
+        "name": "Grob Opening",
+        "eco": "A00",
+        "pgn": "1. g4",
+        "fen": "rnbqkbnr/pppppppp/8/8/6P1/8/PPPPPP1P/RNBQKBNR b KQkq - 0 1",
+        "winrate": [
+            853058,
+            826141,
+            62008
+        ],
+        "games": 1741207
+    },
+    {
+        "name": "Elephant Gambit",
+        "eco": "C40",
+        "pgn": "1. e4 e5 2. Nf3 d5",
+        "fen": "rnbqkbnr/ppp2ppp/8/3pp3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
+        "winrate": [
+            814323,
+            852975,
+            68213
+        ],
+        "games": 1735511
+    },
+    {
+        "name": "Ponziani Opening",
+        "eco": "C44",
+        "pgn": "1. e4 e5 2. Nf3 Nc6 3. c3",
+        "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/2P2N2/PP1P1PPP/RNBQKB1R b KQkq - 0 3",
+        "winrate": [
+            796379,
+            744287,
+            66784
+        ],
+        "games": 1607450
+    },
+    {
+        "name": "Gr\u00c3\u00bcnfeld Defense",
+        "eco": "D80",
+        "pgn": "1. d4 Nf6 2. c4 g6 3. Nc3 d5",
+        "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4",
+        "winrate": [
+            736168,
+            757038,
+            103658
+        ],
+        "games": 1596864
+    },
+    {
+        "name": "R\u00c3\u00a9ti Opening",
+        "eco": "A09",
+        "pgn": "1. Nf3 d5 2. c4",
+        "fen": "rnbqkbnr/ppp1pppp/8/3p4/2P5/5N2/PP1PPPPP/RNBQKB1R b KQkq - 0 2",
+        "winrate": [
+            779521,
+            607481,
+            77086
+        ],
+        "games": 1464088
+    },
+    {
+        "name": "Mikenas Defense",
+        "eco": "A40",
+        "pgn": "1. d4 Nc6",
+        "fen": "r1bqkbnr/pppppppp/2n5/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 1 2",
+        "winrate": [
+            676468,
+            627351,
+            55462
+        ],
+        "games": 1359281
+    },
+    {
+        "name": "Modern Defense",
+        "eco": "A41",
+        "pgn": "1. d4 g6 2. c4 Bg7 3. Nc3 d6",
+        "fen": "rnbqk1nr/ppp1ppbp/3p2p1/8/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4",
+        "winrate": [
+            582204,
+            577428,
+            55908
+        ],
+        "games": 1215540
+    },
+    {
+        "name": "King's Indian Attack",
+        "eco": "A05",
+        "pgn": "1. Nf3 Nf6 2. g3 d5",
+        "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/8/5NP1/PPPPPP1P/RNBQKB1R w KQkq - 0 3",
+        "winrate": [
+            574663,
+            470049,
+            69589
+        ],
+        "games": 1114301
+    },
+    {
+        "name": "Rapport-Jobava System",
+        "eco": "D01",
+        "pgn": "1. d4 d5 2. Nc3 Nf6 3. Bf4",
+        "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P1B2/2N5/PPP1PPPP/R2QKBNR b KQkq - 3 3",
+        "winrate": [
+            529894,
+            467416,
+            51034
+        ],
+        "games": 1048344
+    },
+    {
+        "name": "London System",
+        "eco": "A48",
+        "pgn": "1. d4 Nf6 2. Nf3 g6 3. Bf4",
+        "fen": "rnbqkb1r/pppppp1p/5np1/8/3P1B2/5N2/PPP1PPPP/RN1QKB1R b KQkq - 1 3",
+        "winrate": [
+            483121,
+            473446,
+            57275
+        ],
+        "games": 1013842
+    },
+    {
+        "name": "Benko Gambit",
+        "eco": "A57",
+        "pgn": "1. d4 Nf6 2. c4 c5 3. d5 b5",
+        "fen": "rnbqkb1r/p2ppppp/5n2/1ppP4/2P5/8/PP2PPPP/RNBQKBNR w KQkq - 0 4",
+        "winrate": [
+            451752,
+            496582,
+            56158
+        ],
+        "games": 1004492
+    },
+    {
+        "name": "Barnes Opening",
+        "eco": "A00",
+        "pgn": "1. f3",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/5P2/PPPPP1PP/RNBQKBNR b KQkq - 0 1",
+        "winrate": [
+            447187,
+            486318,
+            35729
+        ],
+        "games": 969234
+    },
+    {
+        "name": "St. George Defense",
+        "eco": "B00",
+        "pgn": "1. e4 a6",
+        "fen": "rnbqkbnr/1ppppppp/p7/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "winrate": [
+            464424,
+            434688,
+            37186
+        ],
+        "games": 936298
+    },
+    {
+        "name": "Yusupov-Rubinstein System",
+        "eco": "A46",
+        "pgn": "1. d4 Nf6 2. Nf3 e6 3. e3",
+        "fen": "rnbqkb1r/pppp1ppp/4pn2/8/3P4/4PN2/PPP2PPP/RNBQKB1R b KQkq - 0 3",
+        "winrate": [
+            456879,
+            416969,
+            46595
+        ],
+        "games": 920443
+    },
+    {
+        "name": "Latvian Gambit",
+        "eco": "C40",
+        "pgn": "1. e4 e5 2. Nf3 f5",
+        "fen": "rnbqkbnr/pppp2pp/8/4pp2/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
+        "winrate": [
+            433985,
+            435269,
+            31220
+        ],
+        "games": 900474
+    },
+    {
+        "name": "Duras Gambit",
+        "eco": "B00",
+        "pgn": "1. e4 f5",
+        "fen": "rnbqkbnr/ppppp1pp/8/5p2/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "winrate": [
+            420506,
+            378665,
+            26295
+        ],
+        "games": 825466
+    },
+    {
+        "name": "Englund Gambit Complex Declined",
+        "eco": "A40",
+        "pgn": "1. d4 e5 2. d5",
+        "fen": "rnbqkbnr/pppp1ppp/8/3Pp3/8/8/PPP1PPPP/RNBQKBNR b KQkq - 0 2",
+        "winrate": [
+            316007,
+            328544,
+            22569
+        ],
+        "games": 667120
+    },
+    {
+        "name": "Anderssen's Opening",
+        "eco": "A00",
+        "pgn": "1. a3",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/P7/1PPPPPPP/RNBQKBNR b KQkq - 0 1",
+        "winrate": [
+            322486,
+            311144,
+            30982
+        ],
+        "games": 664612
+    },
+    {
+        "name": "K\u00c3\u00a1das Opening",
+        "eco": "A00",
+        "pgn": "1. h4",
+        "fen": "rnbqkbnr/pppppppp/8/8/7P/8/PPPPPPP1/RNBQKBNR b KQkq - 0 1",
+        "winrate": [
+            308078,
+            305483,
+            24064
+        ],
+        "games": 637625
+    },
+    {
+        "name": "Richter-Veresov Attack",
+        "eco": "D01",
+        "pgn": "1. d4 Nf6 2. Nc3 d5 3. Bg5",
+        "fen": "rnbqkb1r/ppp1pppp/5n2/3p2B1/3P4/2N5/PPP1PPPP/R2QKBNR b KQkq - 1 3",
+        "winrate": [
+            298345,
+            276071,
+            32049
+        ],
+        "games": 606465
+    },
+    {
+        "name": "Vienna Gambit, with Max Lange Defense",
+        "eco": "C25",
+        "pgn": "1. e4 e5 2. Nc3 Nc6 3. f4",
+        "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4PP2/2N5/PPPP2PP/R1BQKBNR b KQkq - 0 3",
+        "winrate": [
+            309854,
+            251810,
+            21631
+        ],
+        "games": 583295
+    },
+    {
+        "name": "Benko Gambit Accepted",
+        "eco": "A57",
+        "pgn": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6",
+        "fen": "rnbqkb1r/3ppppp/p4n2/1PpP4/8/8/PP2PPPP/RNBQKBNR w KQkq - 0 5",
+        "winrate": [
+            261739,
+            273479,
+            34968
+        ],
+        "games": 570186
+    },
+    {
+        "name": "Queen's Indian Defense",
+        "eco": "E12",
+        "pgn": "1. d4 Nf6 2. c4 e6 3. Nf3 b6",
+        "fen": "rnbqkb1r/p1pp1ppp/1p2pn2/8/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 4",
+        "winrate": [
+            266739,
+            253221,
+            38929
+        ],
+        "games": 558889
+    },
+    {
+        "name": "Czech Defense",
+        "eco": "B07",
+        "pgn": "1. e4 d6 2. d4 Nf6 3. Nc3 c6",
+        "fen": "rnbqkb1r/pp2pppp/2pp1n2/8/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4",
+        "winrate": [
+            269117,
+            253155,
+            25014
+        ],
+        "games": 547286
+    },
+    {
+        "name": "Tarrasch Defense",
+        "eco": "D32",
+        "pgn": "1. d4 d5 2. c4 e6 3. Nc3 c5",
+        "fen": "rnbqkbnr/pp3ppp/4p3/2pp4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4",
+        "winrate": [
+            262611,
+            252331,
+            27960
+        ],
+        "games": 542902
+    },
+    {
+        "name": "Bogo-Indian Defense",
+        "eco": "E11",
+        "pgn": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+",
+        "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 2 4",
+        "winrate": [
+            261717,
+            235460,
+            35596
+        ],
+        "games": 532773
+    },
+    {
+        "name": "Ware Opening",
+        "eco": "A00",
+        "pgn": "1. a4",
+        "fen": "rnbqkbnr/pppppppp/8/8/P7/8/1PPPPPPP/RNBQKBNR b KQkq - 0 1",
+        "winrate": [
+            262140,
+            240749,
+            20282
+        ],
+        "games": 523171
+    },
+    {
+        "name": "Danish Gambit Accepted",
+        "eco": "C21",
+        "pgn": "1. e4 e5 2. d4 exd4 3. c3 dxc3 4. Bc4 cxb2 5. Bxb2",
+        "fen": "rnbqkbnr/pppp1ppp/8/8/2B1P3/8/PB3PPP/RN1QK1NR b KQkq - 0 5",
+        "winrate": [
+            294481,
+            207677,
+            16948
+        ],
+        "games": 519106
+    },
+    {
+        "name": "Slav Indian",
+        "eco": "A50",
+        "pgn": "1. d4 Nf6 2. c4 c6",
+        "fen": "rnbqkb1r/pp1ppppp/2p2n2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+        "winrate": [
+            207081,
+            182672,
+            21163
+        ],
+        "games": 410916
+    },
+    {
+        "name": "Barnes Defense",
+        "eco": "B00",
+        "pgn": "1. e4 f6",
+        "fen": "rnbqkbnr/ppppp1pp/5p2/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "winrate": [
+            208084,
+            170892,
+            13324
+        ],
+        "games": 392300
+    },
+    {
+        "name": "Blumenfeld Countergambit",
+        "eco": "E10",
+        "pgn": "1. d4 Nf6 2. c4 e6 3. Nf3 c5",
+        "fen": "rnbqkb1r/pp1p1ppp/4pn2/2p5/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 4",
+        "winrate": [
+            189169,
+            173147,
+            21586
+        ],
+        "games": 383902
+    },
+    {
+        "name": "Catalan Opening",
+        "eco": "E00",
+        "pgn": "1. d4 Nf6 2. c4 e6 3. g3",
+        "fen": "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/6P1/PP2PP1P/RNBQKBNR b KQkq - 0 3",
+        "winrate": [
+            191175,
+            155142,
+            26779
+        ],
+        "games": 373096
+    },
+    {
+        "name": "Blackmar-Diemer Gambit",
+        "eco": "D00",
+        "pgn": "1. d4 Nf6 2. Nc3 d5 3. e4",
+        "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR b KQkq - 0 3",
+        "winrate": [
+            183392,
+            163999,
+            13580
+        ],
+        "games": 360971
+    },
+    {
+        "name": "Queen's Gambit Declined",
+        "eco": "D52",
+        "pgn": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6 5. Bg5 Nbd7 6. e3",
+        "fen": "r1bqkb1r/pp1n1ppp/2p1pn2/3p2B1/2PP4/2N1PN2/PP3PPP/R2QKB1R b KQkq - 0 6",
+        "winrate": [
+            172460,
+            158762,
+            20460
+        ],
+        "games": 351682
+    },
+    {
+        "name": "Clemenz Opening",
+        "eco": "A00",
+        "pgn": "1. h3",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/7P/PPPPPPP1/RNBQKBNR b KQkq - 0 1",
+        "winrate": [
+            147689,
+            163582,
+            13526
+        ],
+        "games": 324797
+    },
+    {
+        "name": "Ware Defense",
+        "eco": "B00",
+        "pgn": "1. e4 a5",
+        "fen": "rnbqkbnr/1ppppppp/8/p7/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "winrate": [
+            153923,
+            137584,
+            11335
+        ],
+        "games": 302842
+    },
+    {
+        "name": "Lasker Simul Special",
+        "eco": "A00",
+        "pgn": "1. g3 h5",
+        "fen": "rnbqkbnr/ppppppp1/8/7p/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2",
+        "winrate": [
+            129814,
+            150161,
+            11730
+        ],
+        "games": 291705
+    },
+    {
+        "name": "Latvian Gambit Accepted",
+        "eco": "C40",
+        "pgn": "1. e4 e5 2. Nf3 f5 3. exf5",
+        "fen": "rnbqkbnr/pppp2pp/8/4pP2/8/5N2/PPPP1PPP/RNBQKB1R b KQkq - 0 3",
+        "winrate": [
+            135793,
+            144287,
+            10380
+        ],
+        "games": 290460
+    },
+    {
+        "name": "Goldsmith Defense",
+        "eco": "B00",
+        "pgn": "1. e4 h5",
+        "fen": "rnbqkbnr/ppppppp1/8/7p/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "winrate": [
+            142647,
+            129552,
+            9577
+        ],
+        "games": 281776
+    },
+    {
+        "name": "Polish Defense",
+        "eco": "A40",
+        "pgn": "1. d4 b5",
+        "fen": "rnbqkbnr/p1pppppp/8/1p6/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+        "winrate": [
+            138972,
+            131112,
+            11600
+        ],
+        "games": 281684
+    },
+    {
+        "name": "Borg Defense",
+        "eco": "B00",
+        "pgn": "1. e4 g5",
+        "fen": "rnbqkbnr/pppppp1p/8/6p1/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "winrate": [
+            131759,
+            115522,
+            8215
+        ],
+        "games": 255496
+    },
+    {
+        "name": "Canard Opening",
+        "eco": "A45",
+        "pgn": "1. d4 Nf6 2. f4",
+        "fen": "rnbqkb1r/pppppppp/5n2/8/3P1P2/8/PPP1P1PP/RNBQKBNR b KQkq - 0 2",
+        "winrate": [
+            116513,
+            116045,
+            11992
+        ],
+        "games": 244550
+    },
+    {
+        "name": "Pseudo Queen's Indian Defense",
+        "eco": "A47",
+        "pgn": "1. d4 Nf6 2. Nf3 b6",
+        "fen": "rnbqkb1r/p1pppppp/1p3n2/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3",
+        "winrate": [
+            110131,
+            101077,
+            14071
+        ],
+        "games": 225279
+    },
+    {
+        "name": "Carr Defense",
+        "eco": "B00",
+        "pgn": "1. e4 h6",
+        "fen": "rnbqkbnr/ppppppp1/7p/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "winrate": [
+            118413,
+            97803,
+            8313
+        ],
+        "games": 224529
+    },
+    {
+        "name": "Amar Opening",
+        "eco": "A00",
+        "pgn": "1. Nh3",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/7N/PPPPPPPP/RNBQKB1R b KQkq - 1 1",
+        "winrate": [
+            102877,
+            99993,
+            7945
+        ],
+        "games": 210815
+    },
+    {
+        "name": "King's Pawn Opening",
+        "eco": "C20",
+        "pgn": "1. e4 e5 2. b3",
+        "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/1P6/P1PP1PPP/RNBQKBNR b KQkq - 0 2",
+        "winrate": [
+            94242,
+            107337,
+            8020
+        ],
+        "games": 209599
+    },
+    {
+        "name": "Mexican Defense",
+        "eco": "A50",
+        "pgn": "1. d4 Nf6 2. c4 Nc6",
+        "fen": "r1bqkb1r/pppppppp/2n2n2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3",
+        "winrate": [
+            87654,
+            90779,
+            9070
+        ],
+        "games": 187503
+    },
+    {
+        "name": "Queen's Indian Accelerated",
+        "eco": "A50",
+        "pgn": "1. d4 Nf6 2. c4 b6",
+        "fen": "rnbqkb1r/p1pppppp/1p3n2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+        "winrate": [
+            89180,
+            82871,
+            9128
+        ],
+        "games": 181179
+    },
+    {
+        "name": "Paleface Attack",
+        "eco": "A45",
+        "pgn": "1. d4 Nf6 2. f3",
+        "fen": "rnbqkb1r/pppppppp/5n2/8/3P4/5P2/PPP1P1PP/RNBQKBNR b KQkq - 0 2",
+        "winrate": [
+            74069,
+            80371,
+            6546
+        ],
+        "games": 160986
+    },
+    {
+        "name": "Kangaroo Defense",
+        "eco": "A40",
+        "pgn": "1. d4 e6 2. c4 Bb4+",
+        "fen": "rnbqk1nr/pppp1ppp/4p3/8/1bPP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3",
+        "winrate": [
+            82980,
+            68285,
+            7871
+        ],
+        "games": 159136
+    },
+    {
+        "name": "Gunderam Defense",
+        "eco": "C40",
+        "pgn": "1. e4 e5 2. Nf3 Qe7",
+        "fen": "rnb1kbnr/ppppqppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "winrate": [
+            77523,
+            71558,
+            5802
+        ],
+        "games": 154883
+    },
+    {
+        "name": "Semi-Slav Defense Accepted",
+        "eco": "D44",
+        "pgn": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6 5. Bg5 dxc4",
+        "fen": "rnbqkb1r/pp3ppp/2p1pn2/6B1/2pP4/2N2N2/PP2PPPP/R2QKB1R w KQkq - 0 6",
+        "winrate": [
+            66379,
+            66158,
+            6416
+        ],
+        "games": 138953
+    },
+    {
+        "name": "Wade Defense",
+        "eco": "A41",
+        "pgn": "1. d4 d6 2. Nf3 Bg4",
+        "fen": "rn1qkbnr/ppp1pppp/3p4/8/3P2b1/5N2/PPP1PPPP/RNBQKB1R w KQkq - 2 3",
+        "winrate": [
+            64721,
+            56976,
+            7689
+        ],
+        "games": 129386
+    },
+    {
+        "name": "Portuguese Opening",
+        "eco": "C20",
+        "pgn": "1. e4 e5 2. Bb5",
+        "fen": "rnbqkbnr/pppp1ppp/8/1B2p3/4P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
+        "winrate": [
+            56097,
+            57147,
+            4454
+        ],
+        "games": 117698
+    },
+    {
+        "name": "Valencia Opening",
+        "eco": "A00",
+        "pgn": "1. d3 e5 2. Nd2",
+        "fen": "rnbqkbnr/pppp1ppp/8/4p3/8/3P4/PPPNPPPP/R1BQKBNR b KQkq - 1 2",
+        "winrate": [
+            52166,
+            46078,
+            3287
+        ],
+        "games": 101531
+    },
+    {
+        "name": "Guatemala Defense",
+        "eco": "B00",
+        "pgn": "1. e4 b6 2. d4 Ba6",
+        "fen": "rn1qkbnr/p1pppppp/bp6/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 1 3",
+        "winrate": [
+            50842,
+            41014,
+            4012
+        ],
+        "games": 95868
+    },
+    {
+        "name": "Rubinstein Opening",
+        "eco": "D05",
+        "pgn": "1. d4 Nf6 2. Nf3 e6 3. e3 c5 4. Bd3 d5 5. b3",
+        "fen": "rnbqkb1r/pp3ppp/4pn2/2pp4/3P4/1P1BPN2/P1P2PPP/RNBQK2R b KQkq - 0 5",
+        "winrate": [
+            45994,
+            37770,
+            4386
+        ],
+        "games": 88150
+    },
+    {
+        "name": "Amazon Attack",
+        "eco": "D00",
+        "pgn": "1. d4 d5 2. Qd3",
+        "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/3Q4/PPP1PPPP/RNB1KBNR b KQkq - 1 2",
+        "winrate": [
+            27262,
+            28798,
+            2073
+        ],
+        "games": 58133
+    },
+    {
+        "name": "Fried Fox Defense",
+        "eco": "B00",
+        "pgn": "1. e4 f6 2. d4 Kf7",
+        "fen": "rnbq1bnr/pppppkpp/5p2/8/3PP3/8/PPP2PPP/RNBQKBNR w KQ - 1 3",
+        "winrate": [
+            28476,
+            22304,
+            2066
+        ],
+        "games": 52846
+    },
+    {
+        "name": "Hippopotamus Defense",
+        "eco": "B00",
+        "pgn": "1. e4 Nh6",
+        "fen": "rnbqkb1r/pppppppp/7n/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2",
+        "winrate": [
+            23245,
+            21445,
+            1660
+        ],
+        "games": 46350
+    },
+    {
+        "name": "Sodium Attack",
+        "eco": "A00",
+        "pgn": "1. Na3",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/N7/PPPPPPPP/R1BQKBNR b KQkq - 1 1",
+        "winrate": [
+            21596,
+            20931,
+            1750
+        ],
+        "games": 44277
+    },
+    {
+        "name": "Robatsch Defense",
+        "eco": "A41",
+        "pgn": "1. d4 d6 2. Nf3 g6 3. c4 Bg7 4. e4 Bg4",
+        "fen": "rn1qk1nr/ppp1ppbp/3p2p1/8/2PPP1b1/5N2/PP3PPP/RNBQKB1R w KQkq - 1 5",
+        "winrate": [
+            19196,
+            20249,
+            2155
+        ],
+        "games": 41600
+    },
+    {
+        "name": "Global Opening",
+        "eco": "A00",
+        "pgn": "1. h3 e5 2. a3",
+        "fen": "rnbqkbnr/pppp1ppp/8/4p3/8/P6P/1PPPPPP1/RNBQKBNR b KQkq - 0 2",
+        "winrate": [
+            18230,
+            19579,
+            1517
+        ],
+        "games": 39326
+    },
+    {
+        "name": "Irish Gambit",
+        "eco": "C44",
+        "pgn": "1. e4 e5 2. Nf3 Nc6 3. Nxe5",
+        "fen": "r1bqkbnr/pppp1ppp/2n5/4N3/4P3/8/PPPP1PPP/RNBQKB1R b KQkq - 0 3",
+        "winrate": [
+            14512,
+            17115,
+            891
+        ],
+        "games": 32518
+    },
+    {
+        "name": "Lemming Defense",
+        "eco": "B00",
+        "pgn": "1. e4 Na6",
+        "fen": "r1bqkbnr/pppppppp/n7/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2",
+        "winrate": [
+            13507,
+            11583,
+            1036
+        ],
+        "games": 26126
+    },
+    {
+        "name": "D\u00c3\u00b6ry Defense",
+        "eco": "A46",
+        "pgn": "1. d4 Nf6 2. Nf3 Ne4",
+        "fen": "rnbqkb1r/pppppppp/8/8/3Pn3/5N2/PPP1PPPP/RNBQKB1R w KQkq - 3 3",
+        "winrate": [
+            12731,
+            10500,
+            689
+        ],
+        "games": 23920
+    },
+    {
+        "name": "Montevideo Defense",
+        "eco": "A40",
+        "pgn": "1. d4 Nc6 2. d5 Nb8",
+        "fen": "rnbqkbnr/pppppppp/8/3P4/8/8/PPP1PPPP/RNBQKBNR w KQkq - 1 3",
+        "winrate": [
+            11834,
+            9748,
+            878
+        ],
+        "games": 22460
+    },
+    {
+        "name": "Crab Opening",
+        "eco": "A00",
+        "pgn": "1. a4 e5 2. h4",
+        "fen": "rnbqkbnr/pppp1ppp/8/4p3/P6P/8/1PPPPPP1/RNBQKBNR b KQkq - 0 2",
+        "winrate": [
+            9976,
+            10178,
+            755
+        ],
+        "games": 20909
+    },
+    {
+        "name": "Vulture Defense",
+        "eco": "A56",
+        "pgn": "1. d4 Nf6 2. c4 c5 3. d5 Ne4",
+        "fen": "rnbqkb1r/pp1ppppp/8/2pP4/2P1n3/8/PP2PPPP/RNBQKBNR w KQkq - 1 4",
+        "winrate": [
+            7601,
+            9311,
+            860
+        ],
+        "games": 17772
+    },
+    {
+        "name": "Australian Defense",
+        "eco": "A40",
+        "pgn": "1. d4 Na6",
+        "fen": "r1bqkbnr/pppppppp/n7/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 1 2",
+        "winrate": [
+            8416,
+            7514,
+            782
+        ],
+        "games": 16712
+    },
+    {
+        "name": "Bongcloud Attack",
+        "eco": "C20",
+        "pgn": "1. e4 e5 2. Ke2",
+        "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPPKPPP/RNBQ1BNR b kq - 1 2",
+        "winrate": [
+            5760,
+            8523,
+            711
+        ],
+        "games": 14994
+    },
+    {
+        "name": "English Orangutan",
+        "eco": "A15",
+        "pgn": "1. c4 Nf6 2. b4",
+        "fen": "rnbqkb1r/pppppppp/5n2/8/1PP5/8/P2PPPPP/RNBQKBNR b KQkq - 0 2",
+        "winrate": [
+            6636,
+            7575,
+            702
+        ],
+        "games": 14913
+    },
+    {
+        "name": "Blumenfeld Countergambit Accepted",
+        "eco": "E10",
+        "pgn": "1. d4 Nf6 2. c4 e6 3. Nf3 c5 4. d5 b5 5. dxe6 fxe6 6. cxb5 d5",
+        "fen": "rnbqkb1r/p5pp/4pn2/1Ppp4/8/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 7",
+        "winrate": [
+            4094,
+            3734,
+            391
+        ],
+        "games": 8219
+    },
+    {
+        "name": "Marienbad System",
+        "eco": "A47",
+        "pgn": "1. d4 Nf6 2. Nf3 b6 3. g3 Bb7 4. Bg2 c5",
+        "fen": "rn1qkb1r/pb1ppppp/1p3n2/2p5/3P4/5NP1/PPP1PPBP/RNBQK2R w KQkq - 0 5",
+        "winrate": [
+            3017,
+            3092,
+            506
+        ],
+        "games": 6615
+    },
+    {
+        "name": "Norwegian Defense",
+        "eco": "B06",
+        "pgn": "1. e4 g6 2. d4 Nf6 3. e5 Nh5 4. g4 Ng7",
+        "fen": "rnbqkb1r/ppppppnp/6p1/4P3/3P2P1/8/PPP2P1P/RNBQKBNR w KQkq - 1 5",
+        "winrate": [
+            1749,
+            2487,
+            185
+        ],
+        "games": 4421
+    },
+    {
+        "name": "Queen's Pawn, Mengarini Attack",
+        "eco": "E60",
+        "pgn": "1. d4 Nf6 2. c4 g6 3. Qc2",
+        "fen": "rnbqkb1r/pppppp1p/5np1/8/2PP4/8/PPQ1PPPP/RNB1KBNR b KQkq - 1 3",
+        "winrate": [
+            862,
+            1080,
+            62
+        ],
+        "games": 2004
+    },
+    {
+        "name": "Zaire Defense",
+        "eco": "A40",
+        "pgn": "1. d4 Nc6 2. d5 Nb8 3. e4 Nf6 4. e5 Ng8",
+        "fen": "rnbqkbnr/pppppppp/8/3PP3/8/8/PPP2PPP/RNBQKBNR w KQkq - 1 5",
+        "winrate": [
+            821,
+            615,
+            62
+        ],
+        "games": 1498
+    },
+    {
+        "name": "Venezolana Opening",
+        "eco": "A00",
+        "pgn": "1. d3 c5 2. Nc3 Nc6 3. g3",
+        "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/8/2NP2P1/PPP1PP1P/R1BQKBNR b KQkq - 0 3",
+        "winrate": [
+            532,
+            573,
+            47
+        ],
+        "games": 1152
+    },
+    {
+        "name": "Amsterdam Attack",
+        "eco": "A00",
+        "pgn": "1. e3 e5 2. c4 d6 3. Nc3 Nc6 4. b3 Nf6",
+        "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2P5/1PN1P3/P2P1PPP/R1BQKBNR w KQkq - 1 5",
+        "winrate": [
+            425,
+            431,
+            32
+        ],
+        "games": 888
+    },
+    {
+        "name": "Pterodactyl Defense",
+        "eco": "A42",
+        "pgn": "1. Nf3 c5 2. c4 g6 3. d4 Bg7 4. e4 Qa5+ 5. Nc3 d6",
+        "fen": "rnb1k1nr/pp2ppbp/3p2p1/q1p5/2PPP3/2N2N2/PP3PPP/R1BQKB1R w KQkq - 0 6",
+        "winrate": [
+            259,
+            419,
+            40
+        ],
+        "games": 718
+    },
+    {
+        "name": "Amar Gambit",
+        "eco": "A00",
+        "pgn": "1. Nh3 d5 2. g3 e5 3. f4 Bxh3 4. Bxh3 exf4",
+        "fen": "rn1qkbnr/ppp2ppp/8/3p4/5p2/6PB/PPPPP2P/RNBQK2R w KQkq - 0 5",
+        "winrate": [
+            320,
+            260,
+            23
+        ],
+        "games": 603
     }
 ]
