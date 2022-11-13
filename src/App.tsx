@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Study from "./pages/Study";
 import Quiz from "./pages/Quiz";
 import { ModalContextProvider } from "./context/ModalContext";
+import TournamentViewer from "./pages/TournamentViewer";
 function App() {
   const [sideBarVisible, setSideBarVisible] = useState(false);
   return (
@@ -22,6 +23,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/study" element={<Study />} />
               <Route path="/quiz" element={<Quiz />} />
+              <Route path="/tournaments" element={<TournamentViewer />} />
             </Routes>
           </div>
         </div>
