@@ -60,7 +60,7 @@ function QuizGame({ quizRunning, setQuizRunning }: Props) {
 
             {/* middle quiz content */}
             <div className="flex flex-col w-full h-full items-center">
-                <div className="quiz-question flex flex-1 items-center">
+                <div className="quiz-question flex flex-1 items-center text-center">
                     <h2>The {opening} starts with which following moves?</h2>
                 </div>
                 <div className="flex flex-[2] w-full justify-center">
