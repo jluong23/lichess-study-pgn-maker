@@ -96,7 +96,7 @@ export const ModalContextProvider = ({ children }: any) => {
         {/* show a next page button if not on the last page */}
         {state.currentPage < state.content.length - 1 && <button onClick={nextPage} className='pill-button bg-blue-400'>Next</button>}
         {/* show a close button if on last page */}
-        {state.currentPage == state.content.length - 1 && <button onClick={closeModal} className='pill-button bg-slate-500'>Close</button>}
+        {state.currentPage === state.content.length - 1 && <button onClick={closeModal} className='pill-button bg-slate-500'>Close</button>}
       </div>
     </div>
   )
