@@ -1,4 +1,5 @@
 import moment from "moment";
+import PaginatedList from "../PaginatedList";
 
 interface Props {
     tournamentList: any[] /**The tournament list shown to the user */
@@ -24,8 +25,10 @@ const TournamentList = ({ tournamentList }: Props) => {
         Could not find any tournaments using this filter...
     </div>
     const tournamentListOutput = (
-        <div>
-            {tournamentList.map((t) => {
+        <PaginatedList
+            itemsPerPage={10}
+            items={tournamentList}
+            renderMethod={(t) => {
                 const tournamentUrl = `https://lichess.org/tournament/${t.id}`;
                 const link = <a href={tournamentUrl} className="hyperlink">{t.fullName}</a>
                 return (
@@ -33,11 +36,8 @@ const TournamentList = ({ tournamentList }: Props) => {
                         {link} {getTournamentStatus(t)}
                     </p>
                 );
-            })}
-        </div>
+            }} />
     )
-    console.log(tournamentList);
-    
     return tournamentList.length > 0 ? tournamentListOutput : emptyListOutput;
 }
 
