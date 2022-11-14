@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/lichess-study-pgn-maker/static/css/main.663da8e6.css",
-    "main.js": "/lichess-study-pgn-maker/static/js/main.a1671642.js",
+    "main.css": "/lichess-study-pgn-maker/static/css/main.0e33c38c.css",
+    "main.js": "/lichess-study-pgn-maker/static/js/main.dad8eab9.js",
     "index.html": "/lichess-study-pgn-maker/index.html",
-    "main.663da8e6.css.map": "/lichess-study-pgn-maker/static/css/main.663da8e6.css.map",
-    "main.a1671642.js.map": "/lichess-study-pgn-maker/static/js/main.a1671642.js.map"
+    "main.0e33c38c.css.map": "/lichess-study-pgn-maker/static/css/main.0e33c38c.css.map",
+    "main.dad8eab9.js.map": "/lichess-study-pgn-maker/static/js/main.dad8eab9.js.map"
   },
   "entrypoints": [
-    "static/css/main.663da8e6.css",
-    "static/js/main.a1671642.js"
+    "static/css/main.0e33c38c.css",
+    "static/js/main.dad8eab9.js"
   ]
 }
