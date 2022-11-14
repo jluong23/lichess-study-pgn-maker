@@ -2,14 +2,25 @@
 import React, { useState, useEffect } from "react";
 
 const TIME_CONTROLS = ["UltraBullet", "Bullet", "Blitz", "Rapid", "Classical"]
-const VARIANTS = ["Standard", "Chess960", "Racing Kings", "Atomic", "Crazyhouse", "Three-Check"]
-const TOURNAMENT_STATUSES = ["Starting", "Started", "Finished"]
+
+const VARIANTS = ["Standard", "Chess960", "RacingKings", "Atomic", "CrazyHouse", "ThreeCheck", 'Horde']
+const TOURNAMENT_STATUSES: { [key: string]: number } = { "Upcoming": 10, "Ongoing": 20, "Finished": 30 }
 
 interface TournamentFilters {
     // the applicable filters to list of tournaments retrieved
     thematic: boolean /** Only show thematic tournaments? */
     status: number
     hasMaxRating: boolean
+    timeControl: string
+    variant: string
+}
+
+const defaultFilterOptions:TournamentFilters = {
+    thematic: false,
+    status: 0,
+    hasMaxRating: false,
+    timeControl: '',
+    variant: '',
 }
 
 interface Props {
@@ -18,13 +29,7 @@ interface Props {
 }
 
 const FilterOptions = ({ apiTournamentList, setTournamentList }: Props) => {
-    const [tournamentFilters, setTournamentFilters] = useState({
-        thematic: false,
-        status: 0,
-        hasMaxRating: false,
-
-    } as TournamentFilters);
-
+    const [tournamentFilters, setTournamentFilters] = useState(defaultFilterOptions);
 
     useEffect(() => {
         // use effect for tournament filters, apply the filter on tournamentList state
@@ -32,12 +37,17 @@ const FilterOptions = ({ apiTournamentList, setTournamentList }: Props) => {
         if (tournamentFilters.thematic) {
             // only thematic tournaments (tournaments which start with an initial position) have the 'position' property
             filteredTournaments = filteredTournaments.filter((t) => { return t.position });
-        } if (tournamentFilters.hasMaxRating){
+        } if (tournamentFilters.hasMaxRating) {
             filteredTournaments = filteredTournaments.filter((t) => { return t.hasMaxRating });
+        } if (tournamentFilters.status) {
+            filteredTournaments = filteredTournaments.filter((t) => { return t.status == tournamentFilters.status });
+        } if (tournamentFilters.timeControl != '') {
+            filteredTournaments = filteredTournaments.filter((t) => { return t.schedule.speed == tournamentFilters.timeControl });
+        } if(tournamentFilters.variant != '') {
+            filteredTournaments = filteredTournaments.filter((t) => { return t.variant.key.toLowerCase() == tournamentFilters.variant });
+            
         }
-
         // set new tournaments on screen
-        console.log(filteredTournaments);
         setTournamentList(filteredTournaments);
     }, [tournamentFilters]);
 
@@ -56,20 +66,43 @@ const FilterOptions = ({ apiTournamentList, setTournamentList }: Props) => {
 
     return (
         <div id="filters" className="space-x-2">
-            <select>
+            {/* tournament status */}
+            <select id="tournament-status" value={tournamentFilters.status} onChange={(e) => {
+                setTournamentFilters((old) => {
+                    return { ...old, status: parseInt(e.target.value) }
+                });
+            }}>
                 <option>Tournament Status</option>
-                {TOURNAMENT_STATUSES.map((t) => <option key={t}>{t}</option>)}
+                {/* display tournament status options (starting, started, finished), using status codes as value attribute for option tag */}
+                {Object.keys(TOURNAMENT_STATUSES).map((t) =>
+                    <option key={t} value={TOURNAMENT_STATUSES[t]}>{t}</option>
+                )}
             </select>
-            <select>
-                <option>Time Control</option>
-                {TIME_CONTROLS.map((t) => <option key={t}>{t}</option>)}
+
+            {/* tournament time control */}
+            <select id="time-control" value={tournamentFilters.timeControl} onChange={(e) => {
+                setTournamentFilters((old) => {
+                    return { ...old, timeControl: e.target.value };
+                });
+            }}>
+                <option value={""}>Time Control</option>
+                {TIME_CONTROLS.map((t) => <option key={t} value={t.toLowerCase()}>{t}</option>)}
             </select>
-            <select>
-                <option>Variant</option>
-                {VARIANTS.map((v) => <option key={v}>{v}</option>)}
+
+            {/* tournament variant */}
+            <select id="variant" value={tournamentFilters.variant} onChange={(e) => {
+                setTournamentFilters((old) => {
+                    return { ...old, variant: e.target.value };
+                });
+            }}>
+                <option value="">Variant</option>
+                {VARIANTS.map((v) => <option key={v} value={v.toLowerCase()}>{v}</option>)}
             </select>
+
+            {/* buttons */}
             <button className={`pill-button ${tournamentFilters.thematic ? 'bg-green-400' : 'bg-red-400'}`} onClick={onThematicClicked}>Thematic?</button>
             <button className={`pill-button ${tournamentFilters.hasMaxRating ? 'bg-green-400' : 'bg-red-400'}`} onClick={onMaxRatingClicked}> Max Rating?</button>
+            <button className="pill-button bg-slate-400" onClick={() => {setTournamentFilters(defaultFilterOptions)}}>Reset</button>
         </div>
     )
 }

@@ -20,7 +20,10 @@ function getTournamentStatus(tournament: any) {
 }
 
 const TournamentList = ({ tournamentList }: Props) => {
-    return (
+    const emptyListOutput = <div>
+        Could not find any tournaments using this filter...
+    </div>
+    const tournamentListOutput = (
         <div>
             {tournamentList.map((t) => {
                 const tournamentUrl = `https://lichess.org/tournament/${t.id}`;
@@ -33,6 +36,9 @@ const TournamentList = ({ tournamentList }: Props) => {
             })}
         </div>
     )
+    console.log(tournamentList);
+    
+    return tournamentList.length > 0 ? tournamentListOutput : emptyListOutput;
 }
 
 export default TournamentList;
