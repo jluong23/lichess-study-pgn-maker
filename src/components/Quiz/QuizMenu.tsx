@@ -29,7 +29,7 @@ const QuizMenu = ({ setQuizRunning }: Props) => {
             </p>
             <div id="options" className="space-x-2">
                 <button className="pill-button bg-slate-400" onClick={() => { modalContext.openModal(<QuizHelp />) }}> Rules {rulesIcon} </button>
-                <button className="pill-button bg-green-400" onClick={() => { setQuizRunning(true) }}> Play{playIcon}(IN DEVELOPMENT)</button>
+                <button className="pill-button bg-green-400" onClick={() => { setQuizRunning(true) }}> Play {playIcon}</button>
             </div>
         </div>
     )

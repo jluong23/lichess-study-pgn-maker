@@ -10,18 +10,13 @@ interface Props {
     setQuizRunning: (input: boolean) => void
 }
 
-interface QuizLevel {
-    level: number
-    opening: string
-    options: string[]
-    selected: string //which option did the user select? 
-    answer: string
-}
-
-interface Opening{
-    name: string
-    pgn: string
-    eco: string
+interface Opening {
+    name: string;
+    eco: string;
+    pgn: string;
+    fen: string;
+    winrate: number[];
+    games: number;
 }
 
 /**
@@ -41,51 +36,70 @@ function getRandomOpening(level: number, numLevels: number) {
 
 }
 
+/**
+ * Create a quiz level with 1 correct opening and (numOptions - 1) wrong openings.
+ * @param level - the current level
+ * @param numLevels - the number of levels for difficulty scaling
+ * @param numOptions - how many options to select from
+ * @returns the correct answer and all possible answers
+ */
+
+function createPossibleAnswers(level: number, numLevels: number, numOptions: number) {
+    const answer = getRandomOpening(level, numLevels);
+    if (!answer) {
+        // invalid level given numLevels
+        throw new Error(`Invalid 'level' ${level} for 'numLevels' ${numLevels} in createPossibleAnswers`);
+    }
+    // start creating possible answers
+    let possibleAnswers: Opening[] = [];
+    possibleAnswers.push(answer); //add the correct opening
+    while (possibleAnswers.length < numOptions) {
+        // add incorrect openings
+        const wrongOpening = getRandomOpening(level, numLevels);
+        if (wrongOpening && !possibleAnswers.includes(wrongOpening)) {
+            possibleAnswers.push(wrongOpening);
+        }
+    }
+    // shuffle possible answers
+    possibleAnswers.sort(() => Math.random() - 0.5);
+    return {
+        answer, possibleAnswers
+    }
+}
+
 function QuizGame({ quizRunning, setQuizRunning }: Props) {
     const MAX_LIVES = 3;
     const NUM_LEVELS = 9;
+    const QUIZ_OPTIONS = 4; //4 options per question
+    const QUIZ_TIME = 30; //seconds
     const modalContext = useModalContext();
-    const possibleAnswerClass = "pill-button bg-gray-400 h-1/2";
-    const correctAnswerClass = "pill-button bg-green-400 h-1/2";
-    const wrongAnswerClass = "pill-button bg-red-400 h-1/2";
-
 
     const [currentLife, setCurrentLife] = useState(MAX_LIVES);
-    const [level, setLevel] = useState(0);
+    const [level, setLevel] = useState(0); //level of the quiz, from 0 to 'NUM_LEVELS-1'
     const [nextButtonDisabled, setNextButtonDisabled] = useState(false);
-    const [finishButtonDisabled, setFinishButtonDisabled] = useState(false);
-    const [opening, setOpening] = useState({} as Opening);
-    const [possibleAnswers, setPossibleAnswers] = useState<Opening[]>([]);
+    const [correctOpening, setCorrectOpening] = useState({} as Opening); // the correct opening for the current 'level'
+    const [optionSelected, setOptionSelected] = useState<null | Opening>(null); //which opening did the user select?
+    const [quizOptions, setQuizOptions] = useState<Opening[]>([]); //length of 'QUIZ_OPTIONS'
+    const [showQuizAnswer, setShowQuizAnswer] = useState(false);
 
-    const endScreen = <QuizEndScreen score={NUM_LEVELS} numLevels={NUM_LEVELS} setQuizRunning={setQuizRunning} />
+    const endScreen = <QuizEndScreen currentLife={currentLife} maxLives={MAX_LIVES} levelReached={level} numLevels={NUM_LEVELS} setQuizRunning={setQuizRunning} />
 
     useEffect(() => {
         // for each level, change to a new opening
-        const newOpening = getRandomOpening(level, NUM_LEVELS);
-        let newPossibleAnswers = [];
-        if (newOpening) {
-            setOpening(newOpening);
-            // generate possible answers
-            newPossibleAnswers.push(newOpening);
-            while(newPossibleAnswers.length < 4){
-                const wrongOpening = getRandomOpening(level, NUM_LEVELS);
-                if(wrongOpening && !newPossibleAnswers.includes(wrongOpening)){
-                    newPossibleAnswers.push(wrongOpening);
-                }
-            }
-            newPossibleAnswers.sort(() => Math.random() - 0.5);
-            setPossibleAnswers(newPossibleAnswers);
-        }
+        const { answer, possibleAnswers } = createPossibleAnswers(level, NUM_LEVELS, QUIZ_OPTIONS);
+        setCorrectOpening(answer); //store the correct answer 
+        setOptionSelected(null); //reset the option selected
+        setQuizOptions(possibleAnswers);
     }, [level])
 
-    console.log(possibleAnswers);
-    
+    // use effect for showing the end screen
     useEffect(() => {
-        if(currentLife===0){
+        if (currentLife === 0 || optionSelected && level == NUM_LEVELS - 1) {
+            // show death screen if 0 lives, or a selection is made on the final question
             modalContext.openModal(endScreen);
         }
-    }, [currentLife])
-    
+    }, [currentLife, optionSelected])
+
     const nextButton =
         <button
             disabled={nextButtonDisabled}
@@ -94,36 +108,53 @@ function QuizGame({ quizRunning, setQuizRunning }: Props) {
             Next Question
         </button>
 
-    const finishButton =
-        <button
-            className="pill-button bg-green-400 text-2xl disabled:opacity-50 disabled:bg-slate-400"
-            disabled={finishButtonDisabled}
-            onClick={() => { modalContext.openModal(endScreen)}}>
-            Finish
-        </button>
-
-    const onQuizOptionClicked = (e:any) => {
-        const buttonPressed = e.target;
-        if(buttonPressed.textContent == opening.pgn){
-            buttonPressed.className = correctAnswerClass;
-        }else{
-            buttonPressed.className = wrongAnswerClass;
+    const onQuizOptionClicked = (e:any, option:Opening) => {
+        // TODO: Pause the timer
+        setShowQuizAnswer(true); //update state to highlight all answers, showing the correct one
+        setOptionSelected(option);
+        // decrease a life point if the selected option was incorrect
+        if(option != correctOpening){
+            setCurrentLife(currentLife-1);
         }
+        // player can progress to next question
+        setNextButtonDisabled(false);
     }
+
+    const getQuizOptionColor = (quizOption: Opening) => {
+        if (!showQuizAnswer) {
+            // don't show any answers, set quiz option to gray color
+            return 'bg-gray-400';
+        }
+        // green if correct, red if incorrect
+        if (quizOption == correctOpening) {
+            return 'bg-green-400';
+        }
+        return 'bg-red-400';
+    }
+
     return (
         <div className="flex flex-col w-full items-center justify-center space-y-2">
             {/* top bar */}
             <div className="flex justify-evenly w-full [&>*]:justify-center [&>*]:text-center [&>*]:flex">
                 <QuizLifeBar currentLife={currentLife} maxLives={MAX_LIVES} />
-                <h2 className="flex-1">Question {level + 1}/9</h2>
+                <h2 className="flex-1">Question {level + 1}/{NUM_LEVELS}</h2>
                 <QuizTimer
                     level={level}
+                    maxTime={QUIZ_TIME}
                     onCountdown={() => {
+                        // timer starts
+                        setShowQuizAnswer(false);
                         setNextButtonDisabled(true);
                     }}
-                    onTimeOut={() => { 
-                        setCurrentLife(currentLife - 1); 
+                    onTimeOut={() => {
+                        // timer runs out
+                        if(!optionSelected){
+                            // decrease life if the user did not select any option not selected
+                            // (if the wrong option was selected, the onClick handler for the option handles)
+                            setCurrentLife(currentLife - 1);
+                        }
                         setNextButtonDisabled(false);
+                        setShowQuizAnswer(true);
                     }}
                 />
             </div>
@@ -131,20 +162,31 @@ function QuizGame({ quizRunning, setQuizRunning }: Props) {
             {/* middle quiz content */}
             <div className="flex flex-col w-full h-full items-center">
                 <div className="quiz-question flex flex-1 items-center text-center">
-                    <h2>The {opening.name} starts with which following moves?</h2>
+                    <h2>The {correctOpening.name} starts with which following moves?</h2>
                 </div>
                 <div className="flex flex-[2] w-full justify-center">
-                    <div className="quiz-options grid grid-cols-2 gap-4">
-                        {possibleAnswers.map((answer) => {
-                            return <button key={answer.pgn} onClick={(e) => onQuizOptionClicked(e)} className={possibleAnswerClass}>{answer.pgn}</button>
+                    <div className="quiz-options flex-1 sm:flex-[0.75] w-3/4 grid grid-cols-2 gap-4">
+                        {quizOptions && quizOptions.map((option) => {
+                            return (
+                                <button
+                                    key={option.pgn}
+                                    className={`pill-button h-1/2 w-full ${getQuizOptionColor(option)}`}
+                                    onClick={(e) => {onQuizOptionClicked(e,option)}}
+                                    // disable button if player has selected option already
+                                    //double negation, converting optionSelected into boolean
+                                    disabled={!!optionSelected} 
+                                >
+                                    {option.pgn}
+                                </button>
+                            )
                         })}
                     </div>
                 </div>
-
             </div>
             {/* bottom bar */}
             <div className="w-full flex justify-evenly">
-                {level === NUM_LEVELS - 1 ? finishButton : nextButton}
+                {/* show the next button if the player has lives, or the player is not on the final level of quiz */}
+                {(level < NUM_LEVELS-1 && currentLife > 0) && nextButton} 
             </div>
         </div>
     )

@@ -33,3 +33,7 @@ ul {
 .hyperlink {
     @apply text-blue-500    
 }
+
+.colored-hyperlinks a {
+    @apply text-blue-500
+}

@@ -32,11 +32,12 @@ const Sidebar = ({sideBarVisible, setSideBarVisible} : SidebarProps ) => {
       }
       {/* sidebar */}
       <aside className={`bg-slate-500 fixed h-full z-30 transform ease-in-out transition-all duration-500 ${visibleClass}`}>
-          <div className='flex flex-col'>
+          <div className='flex flex-col text-center'>
             <SideBarItem text={"Home"} url="/"/>
             <SideBarItem text={"About"} url="/about"/>
             <SideBarItem text={"Study"} url="/study"/>
             <SideBarItem text={"Quiz"} url="/quiz"/>
+            <SideBarItem text={"Tournaments"} url="/tournaments"/>
 
           </div>
       </aside>   

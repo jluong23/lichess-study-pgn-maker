@@ -4,6 +4,7 @@ import { IconContext } from "react-icons/lib";
 
 interface Props {
     level: number,
+    maxTime: number
     onTimeOut?: () => void;
     onCountdown? : () => void,
 }
@@ -16,9 +17,8 @@ function formatTime(time: number) {
     return time;
 }
 
-function QuizTimer({ onTimeOut, onCountdown, level }: Props) {
-    const MAX_TIME = 10; //seconds
-    const [time, setTime] = useState(MAX_TIME); //descends to 0
+function QuizTimer({ onTimeOut, onCountdown, level, maxTime }: Props) {
+    const [time, setTime] = useState(maxTime); //descends to 0
     const [intervalId, setIntervalId] = useState<NodeJS.Timer>();
     const [flagVisible, setFlagVisible] = useState(false);
     const [currentLevel, setCurrentLevel] = useState(-1);
@@ -30,7 +30,7 @@ function QuizTimer({ onTimeOut, onCountdown, level }: Props) {
     useEffect(() => {
         // for each new level, reset timer state, run onCountdown
         setFlagVisible(false);
-        setTime(MAX_TIME);
+        setTime(maxTime);
         if(onCountdown){
             onCountdown();
         }
