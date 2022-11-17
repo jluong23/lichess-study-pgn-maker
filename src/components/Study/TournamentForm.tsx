@@ -9,24 +9,26 @@ export type ChessColor = 'White' | 'Black';
 export type Result = '1-0' | '0-1' | '1/2-1/2'
 
 export interface ChessPlayer {
-	name: string,
+	name: string
 	elo: number
 	title?: string
+	team: string
 }
 
 export interface ChessRound {
-	side: ChessColor,
-	opponent: ChessPlayer
+	side: ChessColor //what side was the player on?
+	opponent: ChessPlayer //played on the opposite color to 'side'
 	result: Result
 	num: number
 	url: string //url of game in lichess
 }
 export interface TournamentDetails {
-	player: ChessPlayer,
-	tournament: string,
+	player: ChessPlayer
+	tournament: string
 	rounds: ChessRound[]
-	date: string,
+	date: string
 	timeControl: string
+	site: string
 }
 
 interface TournamentFormProps {
@@ -91,6 +93,7 @@ function TournamentForm({ tournamentDetails, setTournamentDetails }: TournamentF
 	const [rounds, setRounds] = useState<ChessRound[]>(tournamentDetails.rounds)
 	const [date, setDate] = useState<string>(tournamentDetails.date);
 	const [timeControl, setTimeControl] = useState<string>(tournamentDetails.timeControl);
+	const [site, setSite] = useState<string>(tournamentDetails.site);
 
 	const [editMode, setEditMode] = useState(false);
 
@@ -100,6 +103,7 @@ function TournamentForm({ tournamentDetails, setTournamentDetails }: TournamentF
 	const modalContext = useModalContext();
 
 	useEffect(() => {
+		// open the modal if the submit button is clicked (and pgn is created)
 		if (rounds) {
 			modalContext.openModal(<TournamentFormModal studyPgn={studyPgn} />)
 		}
@@ -135,7 +139,7 @@ function TournamentForm({ tournamentDetails, setTournamentDetails }: TournamentF
 			return;
 		}
 		// Sets tournament details for the parent 'Study' component  
-		const newDetails: TournamentDetails = { player, tournament, rounds, date, timeControl }
+		const newDetails: TournamentDetails = { player, tournament, rounds, date, timeControl, site }
 		setTournamentDetails(newDetails);
 
 		const newStudyPgn = await createStudyPGN();
@@ -163,20 +167,21 @@ function TournamentForm({ tournamentDetails, setTournamentDetails }: TournamentF
 			}
 		}
 
-
 		const pgn =
 			`[Date "${date || ''}"]
 [White "${white.name || ''}"]
-[Black "${black.name || ''}"]
-[Result "${round.result}"]
+[WhiteTeam "${white.team || ''}"]
 [WhiteElo "${white.elo || ''}"]
 [WhiteTitle "${white.title || ''}"]
-[BlackTitle "${black.title || ''}"]
-[WhiteElo "${white.elo || ''}"]
+[Black "${black.name || ''}"]
+[BlackTeam "${black.team || ''}"]
 [BlackElo "${black.elo || ''}"]
+[BlackTitle "${black.title || ''}"]
+[Result "${round.result}"]
 [TimeControl "${timeControl || ''}"]
 [Event "${tournament || ''}"]
 [Round "${round.num}"]
+[Site "${site || ''}"]
 [Variant "Standard"]
 
 ${moves}
@@ -204,9 +209,8 @@ ${moves}
 		return output;
 	}
 
-	const detailsForm = (
+	const tournamentDetailsForm = (
 		<div className="[&>span]:flex [&>span]:flex-col [&>span]:items-start">
-			<h2>Tournament Details</h2>
 			<span>
 				<label>Tournament Name: </label>
 				<input defaultValue={tournament} onChange={(e) => { setTournament(e.target.value) }} />
@@ -222,6 +226,15 @@ ${moves}
 				<input defaultValue={timeControl} onChange={(e) => { setTimeControl(e.target.value) }} />
 			</span>
 
+			<span>
+				<label>Venue / Site: </label>
+				<input defaultValue={site} onChange={(e) => { setSite(e.target.value) }} />
+			</span>
+		</div>
+	)
+
+	const playerDetailsForm = (
+		<div className="[&>span]:flex [&>span]:flex-col [&>span]:items-start">
 			<span>
 				<label>Player: </label>
 				<input
@@ -245,13 +258,24 @@ ${moves}
 					}}
 				/>
 			</span>
+			<span>
+				<label>Team: </label>
+				<input
+					defaultValue={player ? player.team : ""}
+					onChange={(e) => {
+						setPlayer(
+							(old) => { return { ...old, team: e.target.value } }
+						)
+					}}
+				/>
+			</span>
 		</div>
 	)
 
 	const roundsForm = (
 		<div id='rounds'>
 			<span className="flex space-x-1">
-				<h2>Rounds</h2>
+				<p className="font-bold">Rounds</p>
 				{rounds && rounds.length > 0 && editMode &&
 					// rounds exist, provide option to disable edit mode
 					<button type='button' className="pill-button bg-gray-400" onClick={() => { setEditMode(false) }}>
@@ -281,7 +305,8 @@ ${moves}
 	return (
 		<form onSubmit={formSubmit}>
 			<div className="sm:flex sm:space-x-4 [&>*]:py-1">
-				{detailsForm}
+				{playerDetailsForm}
+				{tournamentDetailsForm}
 				{roundsForm}
 			</div>
 			<span className="space-x-1 flex sm:mt-4">

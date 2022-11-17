@@ -115,7 +115,7 @@ export const RoundEntry = ({editMode, player, round, setRounds}:RoundEntryProps)
 
       return (
           <React.Fragment>
-              <h3>{round.num}) {pairing} {roundResult}</h3>
+              <p>{round.num}) {pairing} {roundResult}</p>
           </React.Fragment>
       )
     }
