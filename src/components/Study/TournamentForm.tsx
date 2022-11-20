@@ -156,6 +156,7 @@ function TournamentForm({ tournamentDetails, setTournamentDetails }: TournamentF
 		}
 		const white = round.side === 'White' ? player : round.opponent;
 		const black = round.side === 'Black' ? player : round.opponent;
+		const roundSite  = site ? site : round.url; // use the url for site, if site does not exist 
 		let moves = "";
 		// if a lichess round url exists and is valid (has a game id), fetch the moves
 		if (round.url && round.url.length > 0 && getGameId(round.url)) {
@@ -181,7 +182,7 @@ function TournamentForm({ tournamentDetails, setTournamentDetails }: TournamentF
 [TimeControl "${timeControl || ''}"]
 [Event "${tournament || ''}"]
 [Round "${round.num}"]
-[Site "${site || ''}"]
+[Site "${roundSite || ''}"]
 [Variant "Standard"]
 
 ${moves}
