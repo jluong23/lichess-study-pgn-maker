@@ -98,13 +98,13 @@ function TournamentForm({ tournamentDetails, setTournamentDetails }: TournamentF
 	const [editMode, setEditMode] = useState(false);
 
 	const [studyPgn, setStudyPgn] = useState<string>(''); //generated on form submit
-	const [numSubmitClicked, setNumSubmitClicked] = useState(1); //number of times submit button is clicked, useful for useEffect dependency, opening modal
+	const [numSubmitClicked, setNumSubmitClicked] = useState(0); //number of times submit button is clicked, useful for useEffect dependency, opening modal
 
 	const modalContext = useModalContext();
 
 	useEffect(() => {
 		// open the modal if the submit button is clicked (and pgn is created)
-		if (rounds) {
+		if (rounds && numSubmitClicked > 0) {
 			modalContext.openModal(<TournamentFormModal studyPgn={studyPgn} />)
 		}
 
@@ -168,7 +168,7 @@ function TournamentForm({ tournamentDetails, setTournamentDetails }: TournamentF
 		}
 
 		const pgn =
-			`[Date "${date || ''}"]
+`[Date "${date || ''}"]
 [White "${white.name || ''}"]
 [WhiteTeam "${white.team || ''}"]
 [WhiteElo "${white.elo || ''}"]
@@ -211,8 +211,10 @@ ${moves}
 
 	const tournamentDetailsForm = (
 		<div className="[&>span]:flex [&>span]:flex-col [&>span]:items-start">
+			<h3 className="font-bold">Tournament Details</h3>
+
 			<span>
-				<label>Tournament Name: </label>
+				<label>Name: </label>
 				<input defaultValue={tournament} onChange={(e) => { setTournament(e.target.value) }} />
 			</span>
 
@@ -235,6 +237,7 @@ ${moves}
 
 	const playerDetailsForm = (
 		<div className="[&>span]:flex [&>span]:flex-col [&>span]:items-start">
+				<h3 className="font-bold">Player Details</h3>
 			<span>
 				<label>Player: </label>
 				<input
@@ -275,7 +278,7 @@ ${moves}
 	const roundsForm = (
 		<div id='rounds'>
 			<span className="flex space-x-1">
-				<p className="font-bold">Rounds</p>
+				<h3 className="font-bold">Rounds</h3>
 				{rounds && rounds.length > 0 && editMode &&
 					// rounds exist, provide option to disable edit mode
 					<button type='button' className="pill-button bg-gray-400" onClick={() => { setEditMode(false) }}>
