@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RoundEntry } from "./RoundEntry";
 import { MdModeEdit } from "react-icons/md"
 import { IoMdEye } from "react-icons/io"
@@ -110,6 +110,12 @@ function TournamentForm({ tournamentDetails, setTournamentDetails }: TournamentF
 
 	}, [studyPgn, numSubmitClicked])
 
+	useEffect(() => {
+		// Sets tournament details for the parent 'Study' component, when each state is updated
+		const newDetails: TournamentDetails = { player, tournament, rounds, date, timeControl, site }
+		setTournamentDetails(newDetails);
+	}, [player, tournament, rounds, date, timeControl, site])
+
 	const addRound = () => {
 		const newRound = {
 			num: rounds ? rounds.length + 1 : 1,
@@ -138,9 +144,6 @@ function TournamentForm({ tournamentDetails, setTournamentDetails }: TournamentF
 			modalContext.openModal(<p>Please add at least one round to proceed.</p>)
 			return;
 		}
-		// Sets tournament details for the parent 'Study' component  
-		const newDetails: TournamentDetails = { player, tournament, rounds, date, timeControl, site }
-		setTournamentDetails(newDetails);
 
 		const newStudyPgn = await createStudyPGN();
 
